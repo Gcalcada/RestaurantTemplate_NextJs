@@ -1,0 +1,29 @@
+{
+    "comments": [
+      {
+        "id":1,
+        "name": "João",
+        "comment": "Adorei o restaurante, a comida estava deliciosa!",
+        "ratings": {
+          "food": 5,
+          "service": 4,
+          "restaurant": 5
+        },
+        "date": "2024-11-09T12:00:00Z" 
+      },
+      {
+        "id":1,
+        "name": "Maria",
+        "comment": "Atendimento muito bom, mas o prato estava salgado.",
+        "ratings": {
+          "food": 3,
+          "service": 5,
+          "restaurant": 4
+        },
+        "date": "2024-11-09T13:00:00Z"
+      }
+    ],
+  
+    "total_comments": 2 
+  }
+  
