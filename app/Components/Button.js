@@ -2,8 +2,9 @@
 import { useCart } from '../Components/CartContext';
 import { FaShoppingCart } from 'react-icons/fa';
 
-export default function AddToCartButton({ item }) {
-  const { addToCart } = useCart();
+export default function AddToCartButton({ item }) {  
+    
+    const { addToCart } = useCart();
 
   return (
     <button

@@ -1,13 +1,20 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useCart } from "./CartContext";
+import { useCart } from "../Components/CartContext";
 import { menuItems } from "../menuData";
 import Image from "next/image";
 const Bot = () => {
   const [step, setStep] = useState(0);
   const [userResponse, setUserResponse] = useState("");
-  const { addToCart } = useCart();
+  const cartContext = useCart();
+
+  // Verifique se o contexto está disponível antes de tentar desestruturar
+  if (!cartContext) {
+    return <div>Carregando...</div>;
+  }
+  
+  const { addToCart } = cartContext;
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 

@@ -11,7 +11,7 @@ export const metadata = {
 };
 export default function Home() {
   return (
-    <div>
+<section>
       {/* Seção Hero - introdução com imagem e título */}
       <Hero />
 
@@ -26,6 +26,6 @@ export default function Home() {
 
       {/* Seção do Bot (apoio ao cliente) */}
       <Bot /> {/* O bot está aqui */}
-    </div>
+      </section>
   );
 }

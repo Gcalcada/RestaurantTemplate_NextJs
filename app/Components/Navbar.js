@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaMoon, FaSun, FaBars, FaTimes, FaHome, FaList, FaShoppingCart } from 'react-icons/fa';
-import { useCart } from './CartContext'; // Acessa o contexto do carrinho
+import { useCart } from '../Components/CartContext';
 
 export default function Navbar() {
-  const { cartItems, totalPrice, increaseQuantity, decreaseQuantity } = useCart(); // Recebe itens do carrinho e total
+  const { cartItems } = useCart();
   const [theme, setTheme] = useState('light');
   const [menuOpen, setMenuOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false); // Estado do modal de checkout

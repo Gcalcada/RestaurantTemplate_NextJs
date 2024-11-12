@@ -7,13 +7,13 @@ export default function Hero() {
        
         
       >
-        <Image  fill
-      sizes="100vw"
-      style={{
-        objectFit: 'cover',
-        backgroundImage: 
-        'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)))',
-      }}  quality="60" src="/images/hero-bg.jpg" alt="background image" ></Image>
+<Image style={{objectFit: "cover"}}
+  src={'/images/hero.jpg'}
+  fill
+  alt='logo'
+  
+  priority
+/>
         {/* background gradient */}
         <div className="absolute inset-0 bg-black opacity-40"></div>
   

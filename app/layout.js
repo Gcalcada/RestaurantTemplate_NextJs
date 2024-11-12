@@ -10,19 +10,20 @@ export const metadata = {
     default: 'My App',
   },
   description: 'Default description for SEO',
-  metadataBase: 'https://localhost:3000', // Use string directly
+  metadataBase: new URL('https://localhost:3000'), // Use string directly
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning={true}>
       <head />
       <body>
+        {/* O CartProvider envolve todo o conteúdo para que o contexto esteja acessível */}
         <CartProvider>
           <header>
             <Navbar />
           </header>
-          {children} {/* This will render the page content */}
+          <main>{children}</main>
         </CartProvider>
       </body>
     </html>

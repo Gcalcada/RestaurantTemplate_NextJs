@@ -71,21 +71,20 @@ const CommentSection = () => {
   };
 
   return (
-    <div className="mt-12">
-      <h2 className="text-xl font-semibold dark:text-white mb-6">Comentários</h2>
+    <div className="mt-12 max-w-6xl mx-auto">
       <div className="space-y-4">
         {comments.map(comment => (
           <div key={comment.id} className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-md">
             <div className="flex items-center space-x-4">
               <div>
-                <p className="font-semibold text-gray-800 dark:text-gray-800">{comment.name}</p>
+                <p className="font-semibold text-gray-800 dark:text-gray-200">{comment.name}</p>
                 <div className="flex space-x-2 mb-2">
                   <span className="text-yellow-500">Food: {comment.ratings.food}/5</span>
                   <span className="text-yellow-500">Service: {comment.ratings.service}/5</span>
                   <span className="text-yellow-500">Restaurant: {comment.ratings.restaurant}/5</span>
                 </div>
-                <p className="text-gray-600 dark:text-gray-800">{comment.comment}</p>
-                <p className="text-xs text-gray-500 dark:text-gray-800 mt-2">{new Date(comment.date).toLocaleDateString()}</p>
+                <p className="text-gray-600 dark:text-gray-400">{comment.comment}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{new Date(comment.date).toLocaleDateString()}</p>
               </div>
             </div>
           </div>
@@ -93,19 +92,19 @@ const CommentSection = () => {
       </div>
 
       <div className="mt-8">
-        <h3 className="text-lg font-semibold dark:text-white mb-4">Deixe seu Comentário</h3>
-        <form onSubmit={handleCommentSubmit} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 className="text-lg font-semibold dark:text-white mb-4">Deixe o seu Comentário</h3>
+        <form onSubmit={handleCommentSubmit} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
           <div className="space-y-4">
             <input
               type="text"
-              className="w-full px-4 py-3 rounded-md text-black focus:outline-none border focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-4 py-2 rounded-md text-black focus:outline-none border focus:ring-2 focus:ring-yellow-500"
               placeholder="Seu nome"
               value={userName}
               onChange={e => setUserName(e.target.value)}
               required
             />
             <textarea
-              className="w-full px-4 py-3 rounded-md text-black border focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-4 py-2 rounded-md text-black border focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Escreva seu comentário..."
               value={newComment}
               onChange={e => setNewComment(e.target.value)}
