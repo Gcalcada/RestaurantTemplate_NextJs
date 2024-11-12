@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaInfoCircle, FaShoppingCart } from 'react-icons/fa';
-import Breadcrumbs from '../Components/Breadcrumbs'; 
+import Breadcrumbs from '../Components/BreadcrumbsComponent'; 
 import AddToCartButton from '../Components/Button';
 
 // Supondo que você tenha os dados no arquivo `menuData.js`
@@ -15,15 +15,12 @@ export default async function Menu() {
   // Dados do menu são importados diretamente (pode ser estático ou de uma API)
   const menuData = menuItems;
 
-  const breadcrumbs = [
-    { name: 'Home', href: '/' },
-    { name: 'Menu', href: '/menu' }
-  ];
+ 
 
   return (
     <section className="py-8 px-4 sm:px-8 lg:px-16">
       <div className="px-4 sm:px-8 lg:px-16">
-        <Breadcrumbs paths={breadcrumbs} />
+        <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-6">Menu</h1>
       </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

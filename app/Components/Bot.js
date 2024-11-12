@@ -31,8 +31,9 @@ const Bot = () => {
 
   const renderMenu = () => {
     return (
-      <div className="mt-4 space-y-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300">
-        <p className="text-base font-medium text-center">Escolha um dos nossos pratos deliciosos:</p>
+      <div className="mt-4 mx-auto  max-h-[400px]
+       overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300">
+        <p className="text-start">Escolha um dos nossos pratos deliciosos:</p>
         <ul className="space-y-4">
           {menuItems.map((dish) => (
             <li key={dish.id} className="bg-white p-3 rounded-lg shadow-md">

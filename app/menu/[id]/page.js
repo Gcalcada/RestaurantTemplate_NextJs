@@ -1,11 +1,15 @@
 import React from 'react';
 import { menuItems } from '../../menuData';
 import CommentSection from '../../Components/CommentSection';
+import Breadcrumbs from '@/app/Components/BreadcrumbsComponent';
+
 export const metadata = {
   title: "Details", // Set the title for the page
 };
-export default function MenuItemDetails({ params }) {
-  const { id } = params; // Extract the 'id' from the route params
+
+// Use async function to handle the async params properly
+export default async function MenuItemDetails({ params }) {
+  const { id } = await params; // Await the 'params' object
 
   // Find the menu item by ID
   const menuItem = menuItems.find(item => item.id === parseInt(id));
@@ -15,10 +19,15 @@ export default function MenuItemDetails({ params }) {
   }
 
   return (
+  
+    
     <section className="py-12 px-6 sm:px-8 lg:px-16 dark:bg-gray-900">
+   
       <div className="max-w-6xl mx-auto">
+      <Breadcrumbs />
         <div className="flex flex-col lg:flex-row items-start lg:items-center">
           <div className="w-full lg:w-1/2 mb-6 lg:mb-0 flex justify-center">
+         
             <img
               width={200}
               height={200}
@@ -50,5 +59,6 @@ export default function MenuItemDetails({ params }) {
 
       <CommentSection /> {/* Render the comment section here */}
     </section>
+   
   );
 }

@@ -2,7 +2,7 @@
 import Navbar from './Components/Navbar';
 import { CartProvider } from './Components/CartContext';
 import "./globals.css";
-
+import BreadcrumbsComponent from './Components/BreadcrumbsComponent';
 // Update metadataBase to a string (use toString())
 export const metadata = {
   title: {
@@ -18,12 +18,17 @@ export default function RootLayout({ children }) {
     <html suppressHydrationWarning={true}>
       <head />
       <body>
+      
         {/* O CartProvider envolve todo o conteúdo para que o contexto esteja acessível */}
         <CartProvider>
           <header>
             <Navbar />
           </header>
-          <main>{children}</main>
+          <main>
+         
+            {children}
+            
+          </main>
         </CartProvider>
       </body>
     </html>

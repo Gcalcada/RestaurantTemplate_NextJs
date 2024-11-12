@@ -3,23 +3,20 @@
 import { useCart } from '../Components/CartContext';  // Importa o contexto do carrinho
 import { FaPlus, FaMinus, FaTrash, FaCheck, FaShoppingCart } from 'react-icons/fa';  // Ícones de aumentar, diminuir, remover, aplicar e finalizar
 import Image from 'next/image'; 
-import Breadcrumbs from '../Components/Breadcrumbs';
+import BreadcrumbsComponent from "../Components/BreadcrumbsComponent";
 export default function Cart() {
   const { cartItems, totalPrice, increaseQuantity, decreaseQuantity, removeItem } = useCart();
-  const breadcrumbs = [
-    { name: 'Home', href: '/' },
-    { name: 'Cart', href: '/Cart' }
-  ];
+
   return (
     <section className="py-8 px-4 sm:px-8 lg:px-16 darker:text-white min-h-screen mx-auto">
-      <div className=" px-4 sm:px-8 lg:px-16">
-      <Breadcrumbs paths={breadcrumbs} />
+      <div className="mx-12">
+      <BreadcrumbsComponent/>
       <h1 className="text-3xl font-bold mb-6">Menu</h1>
       {/* Conteúdo do menu */}
     </div>
       <h2 className="text-2xl sm:text-3xl font-semibold mb-6 mx-4 sm:mx-8 lg:mx-12">Carrinho de Compras</h2>
       
-      <div className="bg-white shadow-md rounded-lg p-6">
+      <div className="bg-white shadow-md rounded-lg p-6 mx-4 sm:mx-8 md:mx-10 lg:mx-12">
         {cartItems.length === 0 ? (
           <p className="text-center text-gray-600 text-sm sm:text-base">O carrinho está vazio.</p>
         ) : (
@@ -68,32 +65,32 @@ export default function Cart() {
               <strong className="text-xl sm:text-2xl text-gray-900">${totalPrice.toFixed(2)}</strong>
             </div>
 
-            {/* Campo de código de desconto */}
-            <div className="mt-6 mx-4 sm:mx-8 lg:mx-12">
-              <label htmlFor="discountCode" className="text-xs sm:text-sm text-gray-600">Código de Desconto</label>
-              <div className="flex flex-wrap space-x-2 mt-2">
-                <input
-                  id="discountCode"
-                  type="text"
-                  placeholder="Insira o código"
-                  className="w-full sm:w-80 p-2 sm:p-3 border rounded-md text-gray-700 text-sm sm:text-base"
-                />
-                <button
-                  className="flex items-center justify-center w-full sm:w-auto bg-blue-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-md hover:bg-blue-700 transition text-sm sm:text-base mt-2 sm:mt-0"
-                >
-                  <FaCheck className="mr-2" size={16} />
-                  Aplicar
-                </button>
-              </div>
-            </div>
+         {/* Campo de código de desconto */}
+<div className="mt-6 mx-4 sm:mx-8 lg:mx-12">
+  <label htmlFor="discountCode" className="text-xs sm:text-sm text-gray-600">Código de Desconto</label>
+  <div className="flex flex-col sm:flex-row gap-2 mt-2">
+    <input
+      id="discountCode"
+      type="text"
+      placeholder="Insira o código"
+      className="w-full sm:w-1/2 p-2 sm:p-3 border rounded-md text-gray-700 text-sm sm:text-base"
+    />
+    <button
+      className="flex items-center justify-center bg-blue-600 text-white rounded-md hover:bg-blue-700 transition py-2 px-4 w-full sm:w-1/2"
+    >
+      <FaCheck className="mr-2" size={16} />
+      Aplicar
+    </button>
+  </div>
+</div>
 
-            {/* Botão Finalizar Compra */}
-            <div className="mt-6 mx-4 sm:mx-8 lg:mx-12">
-              <button className="flex items-center justify-center w-full sm:w-auto bg-green-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-md hover:bg-green-700 transition text-sm sm:text-base">
-                <FaShoppingCart className="mr-2" size={16} />
-                Finalizar Compra
-              </button>
-            </div>
+{/* Botão Finalizar Compra */}
+<div className="mt-6 mx-4 sm:mx-8 lg:mx-12">
+  <button className="flex items-center justify-center w-full bg-green-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-md hover:bg-green-700 transition text-sm sm:text-base">
+    <FaShoppingCart className="mr-2" size={16} />
+    Finalizar Compra
+  </button>
+</div>
           </div>
         )}
       </div>
