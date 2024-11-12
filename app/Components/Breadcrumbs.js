@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Breadcrumbs = ({ paths }) => {
+const Breadcrumbs = ({ paths = [] }) => { 
   return (
     <nav className="mb-4 text-sm">
       <ul className="flex space-x-2">
@@ -22,5 +22,8 @@ const Breadcrumbs = ({ paths }) => {
     </nav>
   );
 };
+
+
+
 
 export default Breadcrumbs;

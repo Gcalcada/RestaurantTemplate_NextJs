@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useCart } from '../CartContext';  // Importa o contexto do carrinho
 import { menuItems } from '../menuData';  // Importa os itens do menu
 import { FaInfoCircle, FaShoppingCart } from 'react-icons/fa';
-import Breadcrumbs from '../components/Breadcrumbs';
+import Breadcrumbs from '../Components/Breadcrumbs';
 export default function Menu() {
   const { addToCart } = useCart();  // Acessa a função de adicionar ao carrinho
   const breadcrumbs = [
