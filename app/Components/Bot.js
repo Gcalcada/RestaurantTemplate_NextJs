@@ -4,19 +4,20 @@ import { useRouter } from "next/navigation";
 import { useCart } from "../Components/CartContext";
 import { menuItems } from "../menuData";
 import Image from "next/image";
+
 const Bot = () => {
   const [step, setStep] = useState(0);
   const [userResponse, setUserResponse] = useState("");
   const cartContext = useCart();
+  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Verifique se o contexto está disponível antes de tentar desestruturar
+  // Return loading state if the context is not yet available
   if (!cartContext) {
     return <div>Carregando...</div>;
   }
-  
+
   const { addToCart } = cartContext;
-  const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleResponse = (response) => {
     setUserResponse(response);
@@ -31,8 +32,7 @@ const Bot = () => {
 
   const renderMenu = () => {
     return (
-      <div className="mt-4 mx-auto  max-h-[400px]
-       overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300">
+      <div className="mt-4 mx-auto max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300">
         <p className="text-start">Escolha um dos nossos pratos deliciosos:</p>
         <ul className="space-y-4">
           {menuItems.map((dish) => (

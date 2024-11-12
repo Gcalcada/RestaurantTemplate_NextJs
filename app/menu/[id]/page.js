@@ -2,7 +2,7 @@ import React from 'react';
 import { menuItems } from '../../menuData';
 import CommentSection from '../../Components/CommentSection';
 import Breadcrumbs from '@/app/Components/BreadcrumbsComponent';
-
+import Image from 'next/image';
 export const metadata = {
   title: "Details", // Set the title for the page
 };
@@ -28,7 +28,7 @@ export default async function MenuItemDetails({ params }) {
         <div className="flex flex-col lg:flex-row items-start lg:items-center">
           <div className="w-full lg:w-1/2 mb-6 lg:mb-0 flex justify-center">
          
-            <img
+            <Image
               width={200}
               height={200}
               src={menuItem.imageUrl}
