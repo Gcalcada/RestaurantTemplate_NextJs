@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useCart } from "../CartContext";
+import { useCart } from "./CartContext";
 import { menuItems } from "../menuData";
 import Image from "next/image";
 const Bot = () => {

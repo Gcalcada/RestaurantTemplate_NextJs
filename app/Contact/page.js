@@ -1,6 +1,8 @@
 // app/contact/page.js
 import Navbar from '../Components/Navbar';
-
+export const metadata = {
+  title: "Contacts", // Set the title for the page
+};
 export default function Contact() {
   return (
     <div>

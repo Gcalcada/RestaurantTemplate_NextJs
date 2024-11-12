@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaMoon, FaSun, FaBars, FaTimes, FaHome, FaList, FaShoppingCart } from 'react-icons/fa';
-import { useCart } from '../CartContext'; // Acessa o contexto do carrinho
+import { useCart } from './CartContext'; // Acessa o contexto do carrinho
 
 export default function Navbar() {
   const { cartItems, totalPrice, increaseQuantity, decreaseQuantity } = useCart(); // Recebe itens do carrinho e total

@@ -20,6 +20,6 @@ export const menuItems = [
       description: 'A delicious classic pizza topped with fresh tomatoes, mozzarella, and basil, making it the perfect vegetarian choice.',
     },
     
-    // Add more items 
+    
   ];
   

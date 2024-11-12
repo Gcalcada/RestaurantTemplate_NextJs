@@ -1,6 +1,6 @@
 // components/Cart.js
 "use client";
-import { useCart } from '../CartContext';  // Importa o contexto do carrinho
+import { useCart } from './CartContext';  // Importa o contexto do carrinho
 import { FaPlus, FaMinus, FaTrash, FaCheck, FaShoppingCart } from 'react-icons/fa';  // Ícones de aumentar, diminuir, remover, aplicar e finalizar
 import Image from 'next/image'; 
 import Breadcrumbs from '../Components/Breadcrumbs';

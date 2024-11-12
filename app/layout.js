@@ -1,29 +1,29 @@
-"use client";
-
+// app/layout.js
 import Navbar from './Components/Navbar';
-import { CartProvider } from './CartContext'; // Importa o CartProvider
+import { CartProvider } from './Components/CartContext';
 import "./globals.css";
-import { useEffect, useState } from 'react';
+
+// Update metadataBase to a string (use toString())
+export const metadata = {
+  title: {
+    template: '%s - My App',
+    default: 'My App',
+  },
+  description: 'Default description for SEO',
+  metadataBase: 'https://localhost:3000', // Use string directly
+};
 
 export default function RootLayout({ children }) {
-  const [isClient, setIsClient] = useState(false);
-
-  // Usa useEffect para definir o estado do cliente
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   return (
     <html lang="en">
+      <head />
       <body>
-        {isClient && ( // Renderiza o layout apenas se isClient for true
-          <CartProvider> {/* Envolva o layout com o CartProvider */}
-            <header>
-              <Navbar />
-            </header>
-            {children}
-          </CartProvider>
-        )}
+        <CartProvider>
+          <header>
+            <Navbar />
+          </header>
+          {children} {/* This will render the page content */}
+        </CartProvider>
       </body>
     </html>
   );

@@ -5,7 +5,10 @@ import Testimonials from './Components/Testimonials';
 import Location from './Components/Location';
 import CallToAction from './Components/CallToAction';
 import Bot from './Components/Bot'; // Importe o Bot
+export const metadata = {
+  title:"Restaurant"
 
+};
 export default function Home() {
   return (
     <div>
