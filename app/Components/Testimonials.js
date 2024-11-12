@@ -8,22 +8,23 @@ export default function Testimonials() {
     ];
 
     return (
-        <section className="py-16 text-center dark:bg-gray-800 dark:text-white">
+        <section className="py-16 text-center  dark:text-white">
             <h2 className="text-4xl sm:text-3xl md:text-4xl font-bold mb-8">What Our Customers Say</h2>
             <div className="flex flex-wrap justify-center gap-6 md:gap-12 mx-2">
                 {testimonials.map((testimonial, index) => (
-                    <div key={index} className="p-6 rounded-lg shadow-lg max-w-sm w-full dark:bg-gray-700 dark:text-white">
+                    <div key={index} className="p-6 rounded-lg shadow-lg max-w-sm w-full bg-white dark:text-black">
                         {/* Client photo*/}
                         <div className="flex items-center justify-center mb-4">
                             <Image
                                 width={200} height={200}
                                 src={testimonial.image}
                                 alt={testimonial.name}
+                                quality={60}
                                 className="h-16 w-16 object-cover rounded-full border-2 dark:border-gray-500"
                             />
                         </div>
                         {/* Text test */}
-                        <p className="text-lg sm:text-base italic mb-4 dark:text-gray-300">&quot;{testimonial.text}&quot;</p>
+                        <p className="text-lg sm:text-base italic mb-4 text-black">&quot;{testimonial.text}&quot;</p>
 
                         {/* Evaluation by stars */}
                         <div className="flex justify-center mb-4">
@@ -46,7 +47,7 @@ export default function Testimonials() {
                         </div>
 
                         {/* Nome do cliente */}
-                        <p className="font-semibold sm:text-sm dark:text-gray-300">{testimonial.name}</p>
+                        <p className="font-semibold sm:text-sm text-black">{testimonial.name}</p>
                     </div>
                 ))}
             </div>

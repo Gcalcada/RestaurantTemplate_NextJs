@@ -6,7 +6,7 @@ import { FaStar } from 'react-icons/fa';
 import {use } from 'react';
 import Image from 'next/image'
 export default function MenuItemDetails({ params }) {
-  const { id } = use(params);  // get the id from url
+  const { id } = use(params);  
   const menuItem = menuItems.find(item => item.id.toString() === id); // search for the item on jsonfile
   const { addToCart } = useCart();
   const [comments, setComments] = useState([]);

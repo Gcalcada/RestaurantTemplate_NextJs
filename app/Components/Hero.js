@@ -1,13 +1,19 @@
 import Link from 'next/link';
+import Image from 'next/image';
 export default function Hero() {
     return (
       <section
         className="relative h-[400px] sm:h-[500px] lg:h-[600px] bg-cover bg-center text-center text-white flex items-center justify-center"
-        style={{
-          backgroundImage:
-            'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/images/hero-bg.jpg)',
-        }}
+       
+        
       >
+        <Image  fill
+      sizes="100vw"
+      style={{
+        objectFit: 'cover',
+        backgroundImage: 
+        'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)))',
+      }}  quality="60" src="/images/hero-bg.jpg" alt="background image" ></Image>
         {/* background gradient */}
         <div className="absolute inset-0 bg-black opacity-40"></div>
   

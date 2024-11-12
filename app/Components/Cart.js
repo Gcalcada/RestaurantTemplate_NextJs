@@ -2,13 +2,22 @@
 "use client";
 import { useCart } from '../CartContext';  // Importa o contexto do carrinho
 import { FaPlus, FaMinus, FaTrash, FaCheck, FaShoppingCart } from 'react-icons/fa';  // Ícones de aumentar, diminuir, remover, aplicar e finalizar
-import Image from 'next/image'
+import Image from 'next/image'; 
+import Breadcrumbs from '../Components/Breadcrumbs';
 export default function Cart() {
   const { cartItems, totalPrice, increaseQuantity, decreaseQuantity, removeItem } = useCart();
-
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: 'Cart', href: '/Cart' }
+  ];
   return (
-    <section className="py-8 px-4 sm:px-8 lg:px-16 bg-gray-100 min-h-screen mx-auto">
-      <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-6 mx-4 sm:mx-8 lg:mx-12">Carrinho de Compras</h2>
+    <section className="py-8 px-4 sm:px-8 lg:px-16 darker:text-white min-h-screen mx-auto">
+      <div className=" px-4 sm:px-8 lg:px-16">
+      <Breadcrumbs paths={breadcrumbs} />
+      <h1 className="text-3xl font-bold mb-6">Menu</h1>
+      {/* Conteúdo do menu */}
+    </div>
+      <h2 className="text-2xl sm:text-3xl font-semibold mb-6 mx-4 sm:mx-8 lg:mx-12">Carrinho de Compras</h2>
       
       <div className="bg-white shadow-md rounded-lg p-6">
         {cartItems.length === 0 ? (
@@ -19,7 +28,7 @@ export default function Cart() {
               {cartItems.map(item => (
                 <li key={item.id} className="flex flex-wrap justify-between items-center border-b py-6 mx-4 sm:mx-8 lg:mx-12">
                   <div className="flex items-center space-x-4 w-full sm:w-auto">
-                    <Image width={200} height={200} src={item.imageUrl} alt={item.name} className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-md shadow-md" />
+                    <Image width={100} height={100} quality={60} src={item.imageUrl} alt={item.name} className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-md shadow-md" />
                     <div className="flex-1">
                       <p className="text-base sm:text-xl font-medium text-gray-800">{item.name}</p>
                       <p className="text-xs sm:text-sm text-gray-600">Preço unitário: ${item.price.toFixed(2)}</p>

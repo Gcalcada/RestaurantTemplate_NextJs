@@ -36,7 +36,10 @@ export default function Navbar() {
   return (
     <nav className={`w-full z-20 p-4 transition-all ${theme === 'light' ? 'bg-white text-black' : 'bg-black text-gray-200'}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold">Restaurant</div>
+        <div className="text-2xl font-bold hover:text-yellow-400">
+          <Link href="/" className='text-2xl font-bold hover:text-yellow-400'> Restaurant</Link>
+        
+          </div>
 
         {/* Botão de Menu Mobile */}
         <div className="lg:hidden text-2xl cursor-pointer" onClick={toggleMenu}>
@@ -45,17 +48,17 @@ export default function Navbar() {
 
         {/* Menu Desktop */}
         <div className={`hidden lg:flex space-x-6 items-center`}>
-          <Link href="/" className="text-lg hover:text-gray-400">Home</Link>
-          <Link href="/menu" className="text-lg hover:text-gray-400">Menu</Link>
+          <Link href="/" className="text-lg hover:text-yellow-400">Home</Link>
+          <Link href="/menu" className="text-lg hover:text-yellow-400">Menu</Link>
           <button onClick={toggleTheme} className="text-xl">
-            {theme === 'light' ? <FaMoon /> : <FaSun />}
+            {theme === 'light' ? <FaMoon /> : <FaSun className='hover:text-yellow-400' />}
           </button>
 
           {/* Carrinho */}
           <Link href="/Cart" className="text-xl relative">
-            <FaShoppingCart />
+            <FaShoppingCart className='hover:text-yellow-400'/>
             {cartItems.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">
+              <span className="absolute -top-2 -right-2 bg-red-500   hover:text-yellow-400 rounded-full text-xs px-1">
                 {cartItems.length}
               </span>
             )}
@@ -72,21 +75,21 @@ export default function Navbar() {
             </button>
             <div className="flex flex-col items-center space-y-6 text-white w-full px-4">
               {/* Itens do menu mobile com ícones e texto */}
-              <Link href="/" onClick={handleMenuItemClick} className="flex items-center space-x-3 text-xl hover:text-gray-400 w-full py-3 text-center border-b border-gray-600">
+              <Link href="/" onClick={handleMenuItemClick} className="flex items-center space-x-3 text-xl hover:bg-yellow-400 w-full py-3 text-center border-b border-gray-600">
                 <FaHome className="text-xl" />
                 <span>Home</span>
               </Link>
-              <Link href="/menu" onClick={handleMenuItemClick} className="flex items-center space-x-3 text-xl hover:text-gray-400 w-full py-3 text-center border-b border-gray-600">
+              <Link href="/menu" onClick={handleMenuItemClick} className="flex items-center space-x-3 text-xl hover:bg-yellow-400 w-full py-3 text-center border-b border-gray-600">
                 <FaList className="text-xl" />
                 <span>Menu</span>
               </Link>
-              <button onClick={toggleTheme} className="flex items-center space-x-3 text-2xl w-full py-3 text-center border-b border-gray-600">
+              <button onClick={toggleTheme} className="flex items-center space-x-3 text-2xl w-full py-3 text-center border-b hover:bg-yellow-400 ">
                 {theme === 'light' ? <FaMoon /> : <FaSun />}
                 <span>Modo</span>
               </button>
 
               {/* Carrinho */}
-              <Link href="/Cart" onClick={handleMenuItemClick} className="flex items-center space-x-3 text-xl relative w-full py-3 text-center border-b border-gray-600">
+              <Link href="/Cart" onClick={handleMenuItemClick} className="flex items-center space-x-3 text-xl relative w-full py-3 text-center border-b ">
                 <FaShoppingCart />
                 {cartItems.length > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">

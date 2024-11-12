@@ -19,6 +19,7 @@ export const menuItems = [
       price: 12.99,
       description: 'A delicious classic pizza topped with fresh tomatoes, mozzarella, and basil, making it the perfect vegetarian choice.',
     },
-    // Adicione outros itens conforme necessário
+    
+    // Add more items 
   ];
   

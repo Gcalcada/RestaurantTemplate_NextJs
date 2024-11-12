@@ -32,7 +32,7 @@ const Bot = () => {
               <h3 className="text-lg font-semibold">{dish.name}</h3>
               <p className="text-gray-600 text-sm">{dish.description}</p>
               <p className="font-bold text-green-600 text-sm">Preço: ${dish.price.toFixed(2)}</p>
-              <Image width={200} height={200} src={dish.imageUrl} alt={dish.name} className="w-full h-28 object-cover mt-2 rounded-lg" />
+              <Image width={200} height={200} quality={60} src={dish.imageUrl} alt={dish.name} className="w-full h-28 object-cover mt-2 rounded-lg" />
               <button
                 onClick={() => handlePurchase(dish)}
                 className="mt-3 w-full bg-green-500 text-white py-1 rounded-lg text-sm"
