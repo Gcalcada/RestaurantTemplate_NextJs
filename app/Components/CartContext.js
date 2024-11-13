@@ -7,15 +7,17 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (item) => {
+  const addToCart = (item, quantity = 1) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((i) => i.id === item.id);
       if (existingItem) {
+        // If item exists, increase the quantity by the specified amount
         return prevItems.map((i) =>
-          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+          i.id === item.id ? { ...i, quantity: i.quantity + quantity } : i
         );
       } else {
-        return [...prevItems, { ...item, quantity: 1 }];
+        // If item does not exist, add it with the specified quantity
+        return [...prevItems, { ...item, quantity }];
       }
     });
   };

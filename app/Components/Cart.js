@@ -61,8 +61,8 @@ export default function Cart() {
             </ul>
 
             <div className="flex flex-wrap justify-between items-center border-t pt-6 mt-8 mx-4 sm:mx-8 lg:mx-12">
-              <strong className="text-xl sm:text-2xl text-gray-900">Total:</strong>
-              <strong className="text-xl sm:text-2xl text-gray-900">${totalPrice.toFixed(2)}</strong>
+              <strong className="text-xl sm:text-2xl text-black ">Total:</strong>
+              <strong className="text-xl sm:text-2xl text-black">${totalPrice.toFixed(2)}</strong>
             </div>
 
          {/* Campo de código de desconto */}

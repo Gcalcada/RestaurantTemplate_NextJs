@@ -1,26 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* globals.css *//* globals.css */
-html {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+/* globals.css */
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
 
-.light {
+
+/* Modo Claro */
+html.light {
   --bg-color: white;
   --text-color: #333;
 }
 
-.dark {
-  --bg-color: #121212;
-  --text-color: #fff;
+/* Modo Escuro */
+html.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
 }
 
+/* Aplicação das variáveis CSS no corpo */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+
+}
+strong {
+
+  color: var(--text-color);
+}
+h1,h2,h3,h4 {
+  
+  color: var(--text-color);
+}
+.merda {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
 a {
   transition: color 0.3s ease;
 }
@@ -29,28 +44,16 @@ a:hover {
   color: #4B8BFF;
 }
 
-/* Preferências de sistema (detectar automaticamente a preferência de tema do usuário) */
-.bg-light {
-  background-color: var(--bg-color);
-}
 
-.text-light {
-  color: var(--text-color);
-}
 
-.bg-dark {
-  background-color: #121212;
-}
 
-.text-dark {
-  color: #fff;
-}
 @media (max-width: 640px) {
   .react-icons {
-    font-size: 2rem; /* Ajuste o valor conforme necessário */
+    font-size: 32px; 
   }
 }
-/* Estilos globais para a página de menu */
+
+
 .menu-item {
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -60,7 +63,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 16px; 
   height: 100%;
 }
 
@@ -91,14 +94,14 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 10px;
+  gap: 16px;
 }
 
 .item-actions a,
 .item-actions button {
   width: 100%;
-  max-width: 180px;
-  padding: 10px;
+  max-width: 288px; 
+  padding: 16px; 
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s ease-in-out;
@@ -134,21 +137,21 @@ a:hover {
   }
 
   .menu-item img {
-    height: 150px; /* Menor altura da imagem */
+    height: 150px; 
   }
 
   .item-actions {
     flex-direction: column;
-    gap: 10px;
+    gap: 16px; 
   }
 
   .item-actions a,
   .item-actions button {
-    width: 100%; /* Botões ocupam toda a largura */
+    width: 100%; 
     margin-bottom: 8px;
   }
 
-  /* Ajustes para o nome e descrição do item */
+
   .item-details h2 {
     font-size: 1.2rem;
   }
@@ -156,28 +159,44 @@ a:hover {
   .item-details p {
     font-size: 0.9rem;
   }
+  .CardsTextoMenu p {
+font-size: 14px;
+  }
+  .CardsTextoMenu  {
+    font-size: 14px;
+
+      }
+      .CardsTextoMenu h2  {
+        font-size: 20px;
+          }
+          .CardsMenu{
+            width: 100%;
+           margin-right: 10px;
+            margin-left:10px;
+          
+      }
 }
 
 /* Para tablets pequenos (600px - 768px) */
 @media (min-width: 600px) and (max-width: 768px) {
   .menu-item {
     margin-bottom: 16px;
-    height: 100%; /* Garante que os itens se estendam */
+    height: 100%; 
   }
 
   .menu-item img {
-    height: 180px; /* Imagem mais adaptável */
+    height: 180px; 
   }
 
   .item-actions {
     flex-direction: row;
     justify-content: space-between;
-    gap: 12px;
+    gap: 16px; 
   }
 
   .item-actions a,
   .item-actions button {
-    width: 48%; /* Botões lado a lado */
+    width: 48%; 
     margin-bottom: 0;
   }
 
@@ -188,12 +207,18 @@ a:hover {
   .item-details p {
     font-size: 1rem;
   }
+  .CardsMenu{
+    width: 100%;
+   margin-right: 20px;
+    margin-left:20px;
+  
+}
 }
 
 /* Para tablets grandes (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .menu-item {
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
   }
 
   .menu-item img {
@@ -203,12 +228,12 @@ a:hover {
   .item-actions {
     flex-direction: row;
     justify-content: space-between;
-    gap: 12px;
+    gap: 16px; 
   }
 
   .item-actions a,
   .item-actions button {
-    width: 48%; /* Botões lado a lado */
+    width: 48%;
   }
 
   .item-details h2 {
@@ -229,12 +254,12 @@ a:hover {
   .item-actions {
     flex-direction: row;
     justify-content: space-between;
-    gap: 15px;
+    gap: 24px; 
   }
 
   .item-actions a,
   .item-actions button {
-    width: 120px; /* Largura fixa para os botões */
+    width: 120px; 
   }
 
   .item-details h2 {
@@ -244,4 +269,10 @@ a:hover {
   .item-details p {
     font-size: 1.2rem;
   }
+  .CardsMenu{
+    width: 70%;
+   margin-right: 60px;
+    margin-left:60px;
+  
+}
 }

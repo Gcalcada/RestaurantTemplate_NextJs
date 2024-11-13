@@ -9,7 +9,7 @@ export default function Hero() {
       >
 <Image style={{objectFit: "cover"}}
   src={'/images/hero.jpg'}
-  fill
+  fill  
   alt='logo'
   
   priority
