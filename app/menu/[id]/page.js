@@ -22,57 +22,50 @@ export default async function MenuItemDetails({ params }) {
 
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4, color: 'text.primary' }}>
-      <Breadcrumbs />
-      <Box 
-        sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, p: 2  }}
-      >
+    <>
+    <Breadcrumbs />
+    <section>
+      <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        
         {/* Image Section */}
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            mb: { xs: 4, lg: 0 },
-            width: { xs: '100%', lg: '50%' }
-          }}
-        >
+        <div className="flex">
           <Image
-            width={600}
-            height={400}
+            width={700}
+            height={600}
             src={menuItem.imageUrl}
             alt={menuItem.name}
-            className="object-fill rounded-lg shadow-lg transform transition-transform hover:scale-105"
-            style={{ maxHeight: 'calc(100vh - 150px)' }}
+            className="object-fill rounded-lg shadow-md transform transition-transform hover:scale-105"
+          
           />
-        </Box>
-
+        </div>
+        
         {/* Details Section */}
-        <Stack
-          spacing={3}
-          sx={{ width: { xs: '100%', lg: '50%' }, pl: { lg: 4 } }}
-        >
-          <Typography  className='text-yellow-500' variant="h4"  gutterBottom>
+        <div className="flex flex-col gap-4 sm:w-1/2">
+          <Typography className="text-yellow-500" variant="h4" gutterBottom>
             {menuItem.name}
           </Typography>
-          <Typography  className='merda' variant="body1" >
+          <Typography variant="body1">
             <strong>Ingredients:</strong> {menuItem.ingredients}
           </Typography>
-          <Typography   variant="body1" className='merda'>
+          <Typography variant="body1">
             <strong>Chef:</strong> {menuItem.chef}
           </Typography>
-          <Typography  className='merda' variant="body1" >
+          <Typography variant="body1">
             <strong>Cooking Time:</strong> {menuItem.cookingTime} min
           </Typography>
-          <Typography variant="body1" className='merda' >
-            <strong >Price:</strong> ${menuItem.price.toFixed(2)}
+          <Typography variant="body1">
+            <strong>Price:</strong> ${menuItem.price.toFixed(2)}
           </Typography>
-
           <ButtonToBuyNow item={{ ...menuItem }} />
-        </Stack>
-      </Box>
-
-      <CommentSection />
-    </Container>
+        </div>
+      </div>
+      
+      <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 mt-8">
+        <CommentSection />
+      </div>
+    </section>
+  </>
   );
+  
 }
 

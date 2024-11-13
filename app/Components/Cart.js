@@ -8,14 +8,17 @@ export default function Cart() {
   const { cartItems, totalPrice, increaseQuantity, decreaseQuantity, removeItem } = useCart();
 
   return (
+    <>
+    <BreadcrumbsComponent/>
     <section className="py-8 px-4 sm:px-8 lg:px-16 darker:text-white min-h-screen mx-auto">
-      <div className="mx-12">
-      <BreadcrumbsComponent/>
-      <h1 className="text-3xl font-bold mb-6">Menu</h1>
-      {/* Conteúdo do menu */}
-    </div>
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-6 mx-4 sm:mx-8 lg:mx-12">Carrinho de Compras</h2>
-      
+    <div className="mx-4 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-12">
+  <h1 className="text-2xl font-bold mb-6">Menu</h1>
+
+</div>
+
+<h2 className="text-2xl font-semibold mb-6 mx-4 sm:mx-8 md:mx-12 ">
+  Carrinho de Compras
+</h2>
       <div className="bg-white shadow-md rounded-lg p-6 mx-4 sm:mx-8 md:mx-10 lg:mx-12">
         {cartItems.length === 0 ? (
           <p className="text-center text-gray-600 text-sm sm:text-base">O carrinho está vazio.</p>
@@ -95,5 +98,7 @@ export default function Cart() {
         )}
       </div>
     </section>
+    </>
   );
+  
 }

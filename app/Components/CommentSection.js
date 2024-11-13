@@ -71,7 +71,7 @@ const CommentSection = () => {
   };
 
   return (
-    <div className="mt-12 max-w-6xl mx-auto">
+    <div className="mt-12 w-full mx-auto">
       <div className="space-y-4">
         {comments.map(comment => (
           <div key={comment.id} className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-md">

@@ -3,7 +3,9 @@
 @tailwind utilities;
 /* globals.css */
 
-
+html body {
+  overflow-y: visible;
+}
 
 /* Modo Claro */
 html.light {
@@ -436,8 +438,8 @@ padding-left: 16px  ;
     font-size: 1.2rem;
   }
   .CardsMenu{
-    width: 100%;
-  
+    
+    
     margin-left:110px;
   
 }

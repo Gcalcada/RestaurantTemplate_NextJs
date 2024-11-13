@@ -23,11 +23,11 @@ export default async function Menu() {
       
     
         <div className='mx-4 sm:mx-8 md:mx-16 lg:mx-24 flex'>
-        <h1 className="text-3xl font-bold p-2 sm:p-4">Menu</h1>
+        <h1 className="text-2xl font-bold p-2 sm:p-4">Menu</h1>
         </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 CardsMenu ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 CardsMenu mx-4 sm:mx-8 md:mx-16 lg:mx-24 ">
         {menuData.map(item => (
-          <div key={item.id} className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col ">
+          <div key={item.id} className="bg-white shadow-lg rounded-lg  flex flex-col ">
             <Image width={200} height={200}
               src={item.imageUrl}
               alt={item.name}
