@@ -9,7 +9,7 @@ export default function AddToCartButton({ item }) {
   return (
     <button
       onClick={() => addToCart(item)}
-      className="flex flex-wrap  items-center justify-center    px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400 transition duration-300"
+      className="flex flex-wrap  items-center justify-center    px-3 py-2 rounded-lg transition duration-300"
     >
       <FaShoppingCart className="mr-2" />
       Comprar

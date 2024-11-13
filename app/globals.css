@@ -9,12 +9,22 @@
 html.light {
   --bg-color: white;
   --text-color: #333;
+  --cards-menu-bg: #cbdff6; 
+  --cards-menu-text: #333333; /* Textos escuros */
+  --cards-menu-title: #0f158e;
+  --cards-menu-bg-2:green;
+  --cards-menu-text-2: #e0e0e0;
 }
 
 /* Modo Escuro */
 html.dark {
   --bg-color: #000000;
   --text-color: #ffffff;
+  --cards-menu-bg: #1e3a8a;
+  --cards-menu-text: #e0e0e0; /* Cinza claro */
+  --cards-menu-title: #ffcc00;
+  --cards-menu-bg-2:green;
+  --cards-menu-text-2: #e0e0e0;
 }
 
 /* Aplicação das variáveis CSS no corpo */
@@ -24,11 +34,30 @@ body {
 
 
 }
+.CardsMenu .bg-white{
+  background-color: var( --cards-menu-bg);
+ 
+}
+.botao button{
+  background-color: var(--cards-menu-bg-2) !important; 
+  color:var(--cards-menu-text-2); 
+}
+.botao button:hover {
+  background-color: var(--cards-menu-bg-2) !important; 
+  color:var(--cards-menu-text-2); 
+}
+
+.CardsTextoMenu p {
+  color:var(--cards-menu-text);
+}
+.CardsTextoMenu h2 {
+  color: var(--cards-menu-title) !important; 
+}
 strong {
 
   color: var(--text-color);
 }
-h1,h2,h3,h4 {
+h1,h3,h4 {
   
   color: var(--text-color);
 }
@@ -108,7 +137,7 @@ a:hover {
 }
 
 .item-actions a {
-  background-color: #f59e0b; /* Amarelo */
+  background-color: #f59e0b; 
   color: white;
 }
 
@@ -117,7 +146,7 @@ a:hover {
 }
 
 .item-actions button {
-  background-color: #10b981; /* Verde */
+  background-color: #10b981; 
   color: white;
 }
 
@@ -125,10 +154,93 @@ a:hover {
   background-color: #059669;
 }
 
+
+
 /* Media Queries */
 
-/* Para dispositivos móveis (menos de 600px) */
-@media (max-width: 599px) {
+/* Para dispositivos móveis */
+
+/* Landscape Mode */
+@media screen and (min-width: 320px) and (max-width: 900px) and (orientation: landscape) {
+  .CardsMenu {
+    grid-template-columns: 1fr !important;
+    gap: 12px; /* Diminui o espaçamento entre os cards */
+  }
+  
+  .CardsMenu .bg-white {
+    border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
+    max-width: 100%;
+    width: 100%;
+    flex-direction: row;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 20px; /* Arredonda a borda do card */
+  
+  }
+  
+  /* Efeito de hover com borda arco-íris */
+  .CardsMenu .bg-white:hover {
+    animation: rainbow-border 3s ease-in-out infinite; /* Torna a animação mais suave */
+  }
+  
+  /* Animação de borda arco-íris usando box-shadow */
+  @keyframes rainbow-border {
+    0% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+    }
+    14% {
+      box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1); 
+    }
+    28% {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1); 
+    }
+    42% {
+      box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1); 
+    }
+    57% {
+      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1); 
+    }
+    71% {
+      box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1); 
+    }
+    85% {
+      box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1); 
+    }
+    100% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+    }
+  }
+
+
+  /* Ajuste da imagem para ocupar todo o espaço disponível sem esticar */
+  .CardsMenu img {
+    width: 50%;
+    flex-direction: row;
+    object-fit: cover;
+  }
+
+  /* Ajuste do texto e das fontes */
+  .CardsTextoMenu h2 {
+    font-size: 1.25rem;
+    flex-direction: row; /* Tamanho menor para o título */
+  }
+
+  .CardsTextoMenu p {
+    font-size: 0.875rem;
+    flex-direction: row; /* Tamanho menor para os textos */
+  }
+
+  
+
+
+  
+ 
+}
+
+/* Portrait Mode */
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
   .menu-item {
     margin-bottom: 16px;
     display: flex;
@@ -137,20 +249,19 @@ a:hover {
   }
 
   .menu-item img {
-    height: 150px; 
+    height: 150px;
   }
 
   .item-actions {
     flex-direction: column;
-    gap: 16px; 
+    gap: 16px;
   }
 
   .item-actions a,
   .item-actions button {
-    width: 100%; 
+    width: 100%;
     margin-bottom: 8px;
   }
-
 
   .item-details h2 {
     font-size: 1.2rem;
@@ -159,22 +270,70 @@ a:hover {
   .item-details p {
     font-size: 0.9rem;
   }
+  
   .CardsTextoMenu p {
-font-size: 14px;
-  }
-  .CardsTextoMenu  {
     font-size: 14px;
+    line-height: 1.2;
+  }
 
-      }
-      .CardsTextoMenu h2  {
-        font-size: 20px;
-          }
-          .CardsMenu{
-            width: 100%;
-           margin-right: 10px;
-            margin-left:10px;
-          
-      }
+  .CardsTextoMenu {
+    font-size: 14px;
+  }
+
+  .CardsTextoMenu h2 {
+    font-size: 20px;
+  }
+
+  .CardsMenu {
+    
+    width: 90%;
+    margin: auto;
+  }
+  .CardsMenu .bg-white {
+    border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
+    max-width: 100%;
+    width: 100%;
+    
+    
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 12px; /* Arredonda a borda do card */
+  
+  }
+  
+  /* Efeito de hover com borda arco-íris */
+  .CardsMenu .bg-white:hover {
+    animation: rainbow-border 3s ease-in-out infinite; /* Torna a animação mais suave */
+  }
+  
+  /* Animação de borda arco-íris usando box-shadow */
+  @keyframes rainbow-border {
+    0% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+    }
+    14% {
+      box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1); 
+    }
+    28% {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1); 
+    }
+    42% {
+      box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1); 
+    }
+    57% {
+      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1); 
+    }
+    71% {
+      box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1); 
+    }
+    85% {
+      box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1); 
+    }
+    100% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+    }
+  }
 }
 
 /* Para tablets pequenos (600px - 768px) */
@@ -208,9 +367,9 @@ font-size: 14px;
     font-size: 1rem;
   }
   .CardsMenu{
-    width: 100%;
-   margin-right: 20px;
-    margin-left:20px;
+    width: 90%;
+ margin:auto;
+   
   
 }
 }
@@ -243,6 +402,13 @@ font-size: 14px;
   .item-details p {
     font-size: 1.1rem;
   }
+  .CardsMenu{
+    width: 82%;
+padding-left: 16px  ;
+    margin-left:64px;
+    
+  
+}
 }
 
 /* Para desktops (acima de 1024px) */
@@ -270,9 +436,52 @@ font-size: 14px;
     font-size: 1.2rem;
   }
   .CardsMenu{
-    width: 70%;
-   margin-right: 60px;
-    margin-left:60px;
+    width: 100%;
   
+    margin-left:110px;
+  
+}
+.CardsMenu .bg-white {
+  border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
+  max-width: 100%;
+  width: 100%;
+  
+  
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 12px; /* Arredonda a borda do card */
+
+}
+.CardsMenu .bg-white:hover {
+  animation: rainbow-border 3s ease-in-out infinite; /* Torna a animação mais suave */
+}
+
+/* Animação de borda arco-íris usando box-shadow */
+@keyframes rainbow-border {
+  0% {
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+  }
+  14% {
+    box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1); 
+  }
+  28% {
+    box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1); 
+  }
+  42% {
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1); 
+  }
+  57% {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1); 
+  }
+  71% {
+    box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1); 
+  }
+  85% {
+    box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1); 
+  }
+  100% {
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+  }
 }
 }

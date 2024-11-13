@@ -34,12 +34,12 @@ export default function Navbar() {
   const handleMenuItemClick = () => setMenuOpen(false); // Fechar o menu ao clicar no item
 
   return (
-    <nav className={`w-full z-20 p-4 transition-all ${theme === 'light' ? 'bg-white text-black' : 'bg-black text-gray-200'}`}>
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold hover:text-yellow-400">
+    <nav className={` items-center justify-center z-20 p-2 sm:p-4 ${theme === 'light' ? 'bg-white text-black' : 'bg-black text-gray-200'}`}>
+       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 flex justify-between items-center">
+       
           <Link href="/" className='text-2xl font-bold hover:text-yellow-400'> Restaurant</Link>
         
-          </div>
+      
 
         {/* Botão de Menu Mobile */}
         <div className="lg:hidden text-2xl cursor-pointer" onClick={toggleMenu}>

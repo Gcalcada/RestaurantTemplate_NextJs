@@ -11,7 +11,7 @@ const BreadcrumbsComponent = () => {
   const pathNames = pathname.split('/').filter((x) => x);
 
   return (
-    <div className="mb-4">
+    <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 flex justify-between items-center p-2 sm:p-4 mb-2 sm:mb-4">
       <Breadcrumbs
         aria-label="breadcrumb"
         separator={<span className="text-blue-400"> &gt; </span>} 
