@@ -1,9 +1,13 @@
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Slider from 'react-slick';
+import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import Slider from "react-slick";
 
-export default function MenuItemDetails({ menuItemId, menuItemImageUrl, menuItemImageUrl2 }) {
+export default function MenuItemDetails({
+  menuItemId,
+  menuItemImageUrl,
+  menuItemImageUrl2,
+}) {
   // Verificação do array de imagens deve ser feita depois dos Hooks, e não condicionalmente.
   const [mainImage, setMainImage] = useState(menuItemImageUrl2[0]);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -15,10 +19,10 @@ export default function MenuItemDetails({ menuItemId, menuItemImageUrl, menuItem
     };
 
     handleResize(); // Atualiza a condição inicial
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []); // Este useEffect não depende de condicional, por isso sempre será chamado
 
@@ -130,8 +134,7 @@ export default function MenuItemDetails({ menuItemId, menuItemImageUrl, menuItem
           <div key={index}>
             <div
               className="cursor-pointer justify-center items-center object-contain w-full"
-              onClick={() => setMainImage(colhoes)}
-            >
+              onClick={() => setMainImage(colhoes)}>
               <Image
                 src={colhoes}
                 alt={`Image ${index + 1} of menu item ${menuItemId}`}
@@ -151,12 +154,11 @@ export default function MenuItemDetails({ menuItemId, menuItemImageUrl, menuItem
           <div
             key={index}
             className={`cursor-pointer ${
-                mainImage === colhoes
+              mainImage === colhoes
                 ? "border-4 border-yellow-500 shadow-[0px 0px 15px 5px rgba(234, 179, 8, 0.7)] transition-all duration-300 ease-in-out scale-105"
-      : "border-4 border-gray-300 shadow-lg shadow-[rgba(255, 255, 255, 0.15) 0px 8px 16px] transition-all duration-300 ease-in-out"
-  } hover:scale-110 hover:shadow-xl hover:shadow-[rgba(234, 179, 8, 0.5)] transition-all duration-300 ease-in-out`}
-            onClick={() => handleThumbnailClick(index)}
-          >
+                : "border-4 border-gray-300 shadow-lg shadow-[rgba(255, 255, 255, 0.15) 0px 8px 16px] transition-all duration-300 ease-in-out"
+            } hover:scale-110 hover:shadow-xl hover:shadow-[rgba(234, 179, 8, 0.5)] transition-all duration-300 ease-in-out`}
+            onClick={() => handleThumbnailClick(index)}>
             <Image
               src={colhoes}
               alt={`Thumbnail ${index + 1} of menu item ${menuItemId}`}

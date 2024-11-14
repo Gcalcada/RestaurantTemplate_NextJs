@@ -1,8 +1,8 @@
-import Navbar from '../Components/Navbar'
-import Hero from '../Components/Hero';
+import Navbar from "../Components/Navbar";
+import Hero from "../Components/Hero";
 
 export const metadata = {
-  title: "About", 
+  title: "About",
 };
 
 export default function About() {

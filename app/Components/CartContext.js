@@ -1,6 +1,6 @@
 // CartContext.js
 "use client";
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from "react";
 
 const CartContext = createContext();
 
@@ -44,7 +44,10 @@ export function CartProvider({ children }) {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
     <CartContext.Provider
@@ -55,8 +58,7 @@ export function CartProvider({ children }) {
         decreaseQuantity,
         removeItem,
         totalPrice,
-      }}
-    >
+      }}>
       {children}
     </CartContext.Provider>
   );
