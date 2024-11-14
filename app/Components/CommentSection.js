@@ -78,7 +78,7 @@ const CommentSection = () => {
         {comments.map((comment) => (
           <div
             key={comment.id}
-            className="bg-gray-100  p-4 rounded-lg shadow-md">
+            className="bg-slate-400 p-4 rounded-lg shadow-md">
             <div className="flex items-center space-x-4">
               <div>
                 <p className="font-semibold  dark:text-gray-200">
@@ -113,7 +113,7 @@ const CommentSection = () => {
         </h3>
         <form
           onSubmit={handleCommentSubmit}
-          className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+          className="bg-white  p-4 rounded-lg shadow-lg">
           <div className="space-y-4">
             <input
               type="text"
