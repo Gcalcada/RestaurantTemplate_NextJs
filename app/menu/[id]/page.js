@@ -58,7 +58,7 @@ export default async function MenuItemDetails({ params }) {
           <Typography variant="body1"><strong>Cooking Time:</strong> {menuItem.cookingTime} min</Typography>
 
           {/* Add to Cart / Buy Now Button */}
-          <ButtonToBuyNow />
+          <ButtonToBuyNow item={{ ...menuItem }} />
 
           {/* Product Info */}
           <div className="mt-8 border-t pt-4">
