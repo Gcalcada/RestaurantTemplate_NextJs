@@ -31,7 +31,7 @@ export default function Cart() {
                     <Image width={100} height={100} quality={60} src={item.imageUrl} alt={item.name} className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-md shadow-md" />
                     <div className="flex-1">
                       <p className="text-base sm:text-xl font-medium text-gray-800">{item.name}</p>
-                      <p className="text-xs sm:text-sm text-gray-600">Preço unitário: ${item.price.toFixed(2)}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">Preço unitário: ${item.price ? item.price.toFixed(2) : '0.00'}</p>
                       <p className="text-xs sm:text-sm text-gray-600">Quantidade: {item.quantity}</p>
                     </div>
                   </div>
