@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from '../Components/CartContext';
 import { FaShoppingCart } from 'react-icons/fa';
-import { FiMinus, FiPlus } from 'react-icons/fi';
+
 
 export default function ButtonToBuyNow({ item }) {
     const { addToCart } = useCart();
@@ -19,34 +19,35 @@ export default function ButtonToBuyNow({ item }) {
     const decreaseQuantity = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
 
     return (
-<div className="flex items-start space-x-3 p-2 rounded-lg w-full 
-  border border-gray-200 dark:border-gray-600 
-  shadow-sm shadow-gray-300 dark:shadow-gray-600">
+<>
             {/* Quantity Controls */}
-            <div className="flex items-center rounded-full overflow-hidden">
-                <button
-                    onClick={decreaseQuantity}
-                    className="flex items-center justify-center  bg-red-400  hover:bg-red-700 transition w-10 h-10"
-                >
-                    <FiMinus />
-                </button>
-                <span className=" flex items-center justify-center w-12 border bg-white h-10 text-black">{quantity}</span>
-                <button
-                    onClick={increaseQuantity}
-                    className="flex items-center justify-center  bg-green-500  hover:bg-green-700 transition w-10 h-10"
-                >
-                    <FiPlus />
-                </button>
-            </div>
+            <div className='flex mb-6 mt-4 gap-4'>
+        <div className="flex border items-center   h-16 w-26 "style={{ borderRadius: '16px' }}>
+        <button 
+  onClick={decreaseQuantity} 
+  className="px-3 py-1  bg-yellow-500 text-black rounded-r-xl hover:bg-yellow-600 focus:outline-none transition duration-200"
+>
+  -
+</button>
+<span className="mx-4 text-xl">{quantity}</span>
+<button 
+  onClick={increaseQuantity} 
+  className="px-3 py-1  bg-yellow-500 text-black items-start  rounded-l-xl hover:bg-yellow-600 focus:outline-none transition duration-200"
+>
+  +
+</button>
+          </div>
 
             {/* Buy Now Button */}
             <button
-                onClick={handleAddToCart}
-                className="flex items-center justify-center px-5 py-2  bg-green-500 text-white rounded-lg hover:bg-green-400 transition duration-300 shadow-md  w-full"
-            >
-                <FaShoppingCart className="mr-2" />
-                Comprar
-            </button>
-        </div>
+  onClick={handleAddToCart}
+  className="flex items-center justify-center bg-yellow-500 text-gray-900 border border-transparent hover:bg-yellow-400 transition duration-300 shadow-md h-16 w-52 rounded-lg dark:bg-yellow-600 dark:text-white dark:hover:bg-yellow-500"
+>
+  <FaShoppingCart className="mr-2" />
+  Comprar
+</button>
+
+            </div>
+        </>
     );
 }
