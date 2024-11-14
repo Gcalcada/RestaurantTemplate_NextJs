@@ -132,16 +132,14 @@ const CommentSection = () => {
             />
             <div className="flex flex-wrap gap-4 mb-4">
               <div className="flex-1 min-w-[150px]">
-                <label className="block text-sm text-gray-700 dark:text-black">
-                  Food Rating
-                </label>
+                <label className="block text-sm  text-black">Food Rating</label>
                 <div className="flex space-x-2 justify-start mt-2">
                   {renderStars(ratingFood, setRatingFood)}
                 </div>
               </div>
 
               <div className="flex-1 min-w-[150px]">
-                <label className="block text-sm text-gray-700 dark:text-black">
+                <label className="block text-sm text-black">
                   Service Rating
                 </label>
                 <div className="flex space-x-2 justify-start mt-2">
@@ -150,7 +148,7 @@ const CommentSection = () => {
               </div>
 
               <div className="flex-1 min-w-[150px]">
-                <label className="block text-sm text-gray-700 dark:text-gray-200">
+                <label className="block text-sm text-black">
                   Restaurant Rating
                 </label>
                 <div className="flex space-x-2 justify-start mt-2">
