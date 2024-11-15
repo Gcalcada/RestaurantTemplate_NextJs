@@ -9,30 +9,71 @@ html body {
 
 /* Modo Claro */
 html.light {
-  --bg-color: white;
+  --bg-color: #e4e0ea;
   --text-color: #333;
-  --cards-menu-bg: #cbdff6;
+  --cards-menu-bg: #dbdbdd;
   --cards-menu-text: #333333; /* Textos escuros */
   --cards-menu-title: #0f158e;
   --cards-menu-bg-2: green;
   --cards-menu-text-2: #e0e0e0;
+  --dark-title: #753398;
+  --card-background: #dbdbdd;
 }
 
 /* Modo Escuro */
 html.dark {
-  --bg-color: #000000;
+  --bg-color: #2e2c54;
   --text-color: #ffffff;
-  --cards-menu-bg: #1e3a8a;
+  --text-color-2: #000000;
+  --cards-menu-bg: #38365e;
   --cards-menu-text: #e0e0e0; /* Cinza claro */
   --cards-menu-title: #ffcc00;
   --cards-menu-bg-2: green;
   --cards-menu-text-2: #e0e0e0;
+  --dark-title: #ffcc00;
+  --card-background: #38365e;
+  --button-bg-color: #866fe2;
+  --text-color-btn: white;
+  --button-bg-color2: #ffcc00;
 }
 
 /* Aplicação das variáveis CSS no corpo */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+}
+.button-bg-color2 {
+  background-color: var(--button-bg-color2);
+  color: var(--text-color-2);
+}
+.button-bg-color {
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+}
+.card-background {
+  background-color: var(--card-background);
+  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
+    0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+.card-background:hover,
+.card-background:focus {
+  /* Aplica a animação tanto para hover quanto para focus */
+  transform: scale(1.05) translateY(-5px); /* Leve movimento e aumento */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  outline: none; /* Remove o outline padrão para evitar bordas feias */
+}
+
+.card-background:hover,
+.card-background:focus {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.05);
+  outline: none;
+}
+
+.dark-title {
+  color: var(--dark-title);
 }
 .CardsMenu .bg-white {
   background-color: var(--cards-menu-bg);
@@ -169,7 +210,6 @@ a:hover {
   }
 
   .CardsMenu .bg-white {
-    border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
     max-width: 100%;
     width: 100%;
     flex-direction: row;
@@ -304,14 +344,10 @@ a:hover {
   }
 
   .CardsMenu {
-    width: 90%;
+    width: 92.5%;
     margin: auto;
   }
   .CardsMenu .bg-white {
-    border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
-    max-width: 100%;
-    width: 100%;
-
     transition: all 0.3s ease-in-out;
     overflow: hidden;
     box-sizing: border-box;
@@ -473,11 +509,8 @@ a:hover {
   .item-details p {
     font-size: 1.2rem;
   }
-  .CardsMenu {
-    margin-left: 110px;
-  }
+
   .CardsMenu .bg-white {
-    border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
     max-width: 100%;
     width: 100%;
 

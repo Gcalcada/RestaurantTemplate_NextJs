@@ -44,7 +44,7 @@ export default function Navbar() {
   return (
     <nav
       className={` items-center justify-center z-20 p-2 sm:p-4 ${
-        theme === "light" ? "bg-white text-black" : "bg-black text-gray-200"
+        theme === "light" ? "bg-color" : "bg-color"
       }`}>
       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold hover:text-yellow-400">
@@ -88,8 +88,8 @@ export default function Navbar() {
       {/* Menu Mobile */}
       {menuOpen && (
         <div
-          className={`lg:hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-30 transition-all duration-300 ease-in-out`}>
-          <div className="flex flex-col items-center bg-black w-full h-full py-10">
+          className={`lg:hidden fixed inset-0 card-background bg-opacity-80 flex justify-center items-center z-30 transition-all duration-300 ease-in-out`}>
+          <div className="flex flex-col items-center card-background w-full h-full py-10">
             <button
               onClick={toggleMenu}
               className="absolute top-6 right-6 text-3xl text-white">
@@ -113,7 +113,7 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={toggleTheme}
-                className="flex items-center space-x-3 text-2xl w-full py-3 text-center border-b hover:bg-yellow-400 ">
+                className="flex items-center space-x-3 text-xl w-full py-3 text-center border-b hover:bg-yellow-400 ">
                 {theme === "light" ? <FaMoon /> : <FaSun />}
                 <span>Modo</span>
               </button>

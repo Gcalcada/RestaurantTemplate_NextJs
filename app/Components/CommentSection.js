@@ -77,7 +77,7 @@ const CommentSection = ({ productId }) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="animate-rgb-gradient bg-blue-400 w-full mx-auto mb-10  transition-all duration-500 ease-in-out p-4 rounded-xl shadow-lg">
+    <div className="animate-rgb-gradient card-background w-full mx-auto mb-10  transition-all duration-500 ease-in-out p-4 rounded-xl shadow-lg">
       {/* Formulário de comentários */}
       <div className="">
         <h3 className="text-2xl font-semibold text-white mb-6">
@@ -89,14 +89,14 @@ const CommentSection = ({ productId }) => {
           <div className="space-y-5">
             <input
               type="text"
-              className="w-full px-5 py-3 rounded-md text-gray-800 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-5 py-3 rounded-md text-white bg-gray-800  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Seu nome"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               required
             />
             <textarea
-              className="w-full px-5 py-3 rounded-md text-gray-800 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-5 py-3 rounded-md text-white bg-gray-800  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Escreva seu comentário..."
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}

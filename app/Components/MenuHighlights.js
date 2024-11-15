@@ -25,14 +25,14 @@ export default function MenuHighlights() {
 
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8  text-center">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">
-        Our Specialties
+      <h2 className="text-2xl sm:text-4xl font-bold mb-6 sm:mb-8">
+        Healthy Dishes
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mx-auto max-w-screen-lg ">
         {menuItems.map((item, index) => (
           <div
             key={index}
-            className=" p-4 sm:p-6 rounded-lg shadow-lg dark:shadow-dark  bg-white mx-4 ">
+            className=" p-4 sm:p-6 rounded-lg card-background  shadow-xl mx-4 ">
             <Image
               width={200}
               height={200}
@@ -41,14 +41,14 @@ export default function MenuHighlights() {
               className="h-40 w-full object-cover rounded-md mb-4"
             />
             <h3
-              className="text-xl sm:text-2xl font-semibold text-gray-600
+              className="dark-title text-xl sm:text-2xl font-semibold 
                         ">
               {item.name}
             </h3>
-            <p className="text-gray-600 mt-2 text-sm sm:text-base">
+            <p className="text-white mt-2 text-sm sm:text-base">
               {item.description}
             </p>
-            <p className="mt-4 text-lg sm:text-xl font-semibold text-gray-600">
+            <p className="mt-4 text-lg sm:text-xl font-semibold text-ca">
               ${item.price}
             </p>
           </div>

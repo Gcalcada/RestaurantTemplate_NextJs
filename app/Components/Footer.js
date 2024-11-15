@@ -8,9 +8,9 @@ const Footer = () => {
   return (
     <>
       {/* Linha de divisão com borda branca */}
-      <div className="h-1 bg-white"></div>
+      <div className="h-1 bg-white mt-10"></div>
 
-      <footer className="bg-black text-white py-8 px-6 sm:px-12 md:px-24">
+      <footer className="bg-color  text-white py-8 px-6 sm:px-12 md:px-24">
         <div className="max-w-screen-xl mx-auto">
           {/* Container com colunas responsivas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -135,7 +135,7 @@ const Footer = () => {
                 <Link
                   href="tel:+356911533126"
                   className="block mb-2 text-sm hover:text-yellow-400">
-                  +356 911 533 126
+                  Phone Number
                 </Link>
               </p>
             </div>

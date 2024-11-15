@@ -1,4 +1,3 @@
-// app/Components/Testimonials.js
 import Image from "next/image";
 
 export default function Testimonials() {
@@ -15,19 +14,25 @@ export default function Testimonials() {
       image: "/images/customer2.jpg",
       rating: 4,
     },
+    {
+      name: "Gail Boyd",
+      text: "The best restaurant you’ll find! Great ambiance, delicious food, and amazing music ",
+      image: "/images/customer3.jpg",
+      rating: 5,
+    },
   ];
 
   return (
-    <section className="py-16 text-center  dark:text-white">
-      <h2 className="text-4xl sm:text-3xl md:text-4xl font-bold mb-8">
+    <section className="py-10 text-center bg-color">
+      <h2 className="text-xl sm:text-4xl md:text-5xl lg:text-4xl font-bold mb-8 text-white">
         What Our Customers Say
       </h2>
-      <div className="flex flex-wrap justify-center gap-6 md:gap-12 mx-2">
+      <div className="testimonial grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="p-6 rounded-lg shadow-lg max-w-sm w-full bg-white dark:text-black">
-            {/* Client photo*/}
+            className="p-4 mt-2 rounded-lg shadow-lg bg-gradient-to-r card-background transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:cursor-pointer">
+            {/* Client photo */}
             <div className="flex items-center justify-center mb-4">
               <Image
                 width={200}
@@ -35,22 +40,25 @@ export default function Testimonials() {
                 src={testimonial.image}
                 alt={testimonial.name}
                 quality={60}
-                className="h-16 w-16 object-cover rounded-full border-2 dark:border-gray-500"
+                className="h-20 w-20 object-cover rounded-full border-4 border-white shadow-lg"
               />
             </div>
-            {/* Text test */}
-            <p className="text-lg sm:text-base italic mb-4 text-black">
+
+            {/* Testimonial text */}
+            <p className="text-base sm:text-lg md:text-xl italic mb-4 text-white">
               &quot;{testimonial.text}&quot;
             </p>
 
-            {/* Evaluation by stars */}
+            {/* Star rating */}
             <div className="flex justify-center mb-4">
               {[...Array(5)].map((_, i) => (
                 <svg
                   key={i}
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`h-5 w-5 ${
-                    i < testimonial.rating ? "text-yellow-400" : "text-gray-300"
+                  className={`h-5 w-5 transition-all duration-200 ${
+                    i < testimonial.rating
+                      ? "text-yellow-500 transform scale-110"
+                      : "text-gray-300"
                   }`}
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -64,8 +72,8 @@ export default function Testimonials() {
               ))}
             </div>
 
-            {/* Nome do cliente */}
-            <p className="font-semibold sm:text-sm text-black">
+            {/* Client name */}
+            <p className="font-semibold sm:text-sm md:text-base text-white">
               {testimonial.name}
             </p>
           </div>

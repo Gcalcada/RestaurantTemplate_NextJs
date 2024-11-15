@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function CallToAction() {
   return (
-    <section className="py-12 px-4 sm:py-16 bg-black text-center text-white">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white">
+    <section className="py-12 px-4 sm:py-16 bg-color text-center text-white">
+      <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white">
         Ready to Taste Our Delicious Dishes?
       </h2>
       <p className="text-base sm:text-lg mb-6 sm:mb-8">
@@ -12,12 +12,12 @@ export default function CallToAction() {
       <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
         <Link
           href="/Reservations"
-          className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-white bg-yellow-500 hover:bg-yellow-400 transition-all duration-300 rounded-full">
+          className="px-8 py-4 sm:px-8 lg:px-12 text-sm sm:text-lg lg:text-xl font-semibold text-white button-bg-color2 transition-all duration-300 rounded-[12px] shadow-lg transform hover:scale-105 hover:opacity-90 hover:shadow-lg hover:shadow-purple-400 hover:text-purle-400 group">
           Reserve a Table
         </Link>
         <Link
           href="/menu"
-          className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-black bg-white hover:bg-gray-100 transition-all duration-300 rounded-full">
+          className="px-8 py-4 sm:px-8 lg:px-12 text-sm sm:text-lg lg:text-xl font-semibold text-white button-bg-color transition-all duration-300 rounded-[12px] shadow-lg transform hover:scale-105 hover:opacity-90 hover:shadow-lg hover:shadow-yellow-500 hover:text-yellow-200 group">
           Explore the Menu
         </Link>
       </div>

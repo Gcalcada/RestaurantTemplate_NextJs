@@ -30,9 +30,9 @@ export default function Cart() {
         <h2 className="text-2xl font-semibold mb-6 mx-4 sm:mx-8 md:mx-12 ">
           Carrinho de Compras
         </h2>
-        <div className="bg-white shadow-md rounded-lg p-6 mx-4 sm:mx-8 md:mx-10 lg:mx-12">
+        <div className="card-background shadow-md rounded-lg p-6 mx-4 sm:mx-8 md:mx-10 lg:mx-12">
           {cartItems.length === 0 ? (
-            <p className="text-center text-gray-600 text-sm sm:text-base">
+            <p className="text-center text-black text-sm sm:text-base">
               O carrinho está vazio.
             </p>
           ) : (
@@ -52,20 +52,20 @@ export default function Cart() {
                         className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-md shadow-md"
                       />
                       <div className="flex-1">
-                        <p className="text-base sm:text-xl font-medium text-gray-800">
+                        <p className="text-base sm:text-xl font-medium text-yellow-400">
                           {item.name}
                         </p>
-                        <p className="text-xs sm:text-sm text-gray-600">
+                        <p className="text-xs sm:text-sm text-white">
                           Preço unitário: $
                           {item.price ? item.price.toFixed(2) : "0.00"}
                         </p>
-                        <p className="text-xs sm:text-sm text-gray-600">
+                        <p className="text-xs sm:text-sm text-white">
                           Quantidade: {item.quantity}
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-2 sm:space-x-4 mt-4 sm:mt-0">
-                      <span className="text-lg sm:text-xl font-semibold text-gray-900">
+                      <span className="text-lg sm:text-xl font-semibold text-white">
                         ${(item.price * item.quantity).toFixed(2)}
                       </span>
                       <div className="flex items-center space-x-2 sm:space-x-4">
@@ -94,10 +94,10 @@ export default function Cart() {
               </ul>
 
               <div className="flex flex-wrap justify-between items-center border-t pt-6 mt-8 mx-4 sm:mx-8 lg:mx-12">
-                <strong className="text-xl sm:text-2xl text-black ">
+                <strong className="text-xl sm:text-2xl text-white ">
                   Total:
                 </strong>
-                <strong className="text-xl sm:text-2xl text-black">
+                <strong className="text-xl sm:text-2xl text-yellow-400">
                   ${totalPrice.toFixed(2)}
                 </strong>
               </div>
@@ -106,7 +106,7 @@ export default function Cart() {
               <div className="mt-6 mx-4 sm:mx-8 lg:mx-12">
                 <label
                   htmlFor="discountCode"
-                  className="text-xs sm:text-sm text-gray-600">
+                  className="text-xs sm:text-sm text-white">
                   Código de Desconto
                 </label>
                 <div className="flex flex-col sm:flex-row gap-2 mt-2">
