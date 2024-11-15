@@ -88,7 +88,7 @@ export default async function MenuItemDetails({ params }) {
       </section>
 
       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 mt-8">
-        <CommentSection />
+        <CommentSection productId={menuItem.id} />
       </div>
     </>
   );

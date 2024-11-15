@@ -1,27 +1,28 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
-const CommentSection = () => {
+const CommentSection = ({ productId }) => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
   const [ratingFood, setRatingFood] = useState(0);
   const [ratingService, setRatingService] = useState(0);
   const [ratingRestaurant, setRatingRestaurant] = useState(0);
   const [userName, setUserName] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const commentsPerPage = 3;
 
-  // Load comments from localStorage
+  // Carregar comentários específicos do produto a partir do localStorage
   useEffect(() => {
-    const storedComments = localStorage.getItem("comments");
+    const storedComments = localStorage.getItem(`comments-${productId}`);
     if (storedComments) {
       setComments(JSON.parse(storedComments));
     }
-  }, []);
+  }, [productId]);
 
-  // Save comments to localStorage
+  // Salvar comentários específicos do produto no localStorage
   const saveCommentsToLocalStorage = (comments) => {
-    localStorage.setItem("comments", JSON.stringify(comments));
+    localStorage.setItem(`comments-${productId}`, JSON.stringify(comments));
   };
 
   const handleCommentSubmit = (event) => {
@@ -40,123 +41,97 @@ const CommentSection = () => {
         date: new Date().toISOString(),
       };
 
-      // Update the comments
       const updatedComments = [newCommentData, ...comments];
       setComments(updatedComments);
 
-      // Save comments to localStorage
       saveCommentsToLocalStorage(updatedComments);
 
-      // Reset fields
       setNewComment("");
       setRatingFood(0);
       setRatingService(0);
       setRatingRestaurant(0);
       setUserName("");
+      setCurrentPage(1); // Redefine para a primeira página
     }
   };
 
   const renderStars = (rating, setRating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <FaStar
-          key={i}
-          className={`cursor-pointer ${
-            i <= rating ? "text-yellow-500" : "text-gray-300"
-          }`}
-          onClick={() => setRating(i)}
-        />
-      );
-    }
-    return stars;
+    return Array.from({ length: 5 }, (_, i) => (
+      <FaStar
+        key={i + 1}
+        className={`cursor-pointer ${
+          i + 1 <= rating ? "text-yellow-500" : "text-gray-300"
+        }`}
+        onClick={() => setRating(i + 1)}
+      />
+    ));
   };
 
-  return (
-    <div className="mt-12 w-full mx-auto mb-10">
-      <div className="">
-        {comments.map((comment) => (
-          <div
-            key={comment.id}
-            className="bg-slate-400 p-4 rounded-lg shadow-md">
-            <div className="flex items-center space-x-4">
-              <div>
-                <p className="font-semibold  dark:text-gray-200">
-                  {comment.name}
-                </p>
-                <div className="flex space-x-2 mb-2">
-                  <span className="text-yellow-500">
-                    Food: {comment.ratings.food}/5
-                  </span>
-                  <span className="text-yellow-500">
-                    Service: {comment.ratings.service}/5
-                  </span>
-                  <span className="text-yellow-500">
-                    Restaurant: {comment.ratings.restaurant}/5
-                  </span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {comment.comment}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                  {new Date(comment.date).toLocaleDateString()}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+  const indexOfLastComment = currentPage * commentsPerPage;
+  const indexOfFirstComment = indexOfLastComment - commentsPerPage;
+  const currentComments = comments.slice(
+    indexOfFirstComment,
+    indexOfLastComment
+  );
 
-      <div className="mt-8">
-        <h3 className="text-lg font-semibold dark:text-white mb-4">
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  return (
+    <div className="animate-rgb-gradient bg-blue-400 w-full mx-auto mb-10  transition-all duration-500 ease-in-out p-4 rounded-xl shadow-lg">
+      {/* Formulário de comentários */}
+      <div className="">
+        <h3 className="text-2xl font-semibold text-white mb-6">
           Deixe o seu Comentário
         </h3>
         <form
           onSubmit={handleCommentSubmit}
-          className="bg-white  p-4 rounded-lg shadow-lg">
-          <div className="space-y-4">
+          className="bg-white p-6 rounded-lg  shadow-lg transform hover:scale-[1.01] transition-all">
+          <div className="space-y-5">
             <input
               type="text"
-              className="w-full px-4 py-2 rounded-md text-black focus:outline-none border focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-5 py-3 rounded-md text-gray-800 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Seu nome"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               required
             />
             <textarea
-              className="w-full px-4 py-2 rounded-md text-black border focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="w-full px-5 py-3 rounded-md text-gray-800 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Escreva seu comentário..."
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               required
             />
-            <div className="flex flex-wrap gap-4 mb-4">
-              <div className="flex-1 min-w-[150px]">
-                <label className="block text-sm  text-black">Food Rating</label>
+            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center justify-center  ">
+              <div className="w-fit">
+                <label className="block text-sm text-gray-800 dark:text-gray-200">
+                  Avaliação da Comida
+                </label>
                 <div className="flex space-x-2 justify-start mt-2">
                   {renderStars(ratingFood, setRatingFood)}
                 </div>
               </div>
 
-              <div className="flex-1 min-w-[150px]">
-                <label className="block text-sm text-black">
-                  Service Rating
+              <div className="w-fit">
+                <label className="block text-sm text-gray-800 dark:text-gray-200">
+                  Avaliação do Atendimento
                 </label>
                 <div className="flex space-x-2 justify-start mt-2">
                   {renderStars(ratingService, setRatingService)}
                 </div>
               </div>
 
-              <div className="flex-1 min-w-[150px]">
-                <label className="block text-sm text-black">
-                  Restaurant Rating
+              <div className="w-fit">
+                <label className="block text-sm text-gray-800 dark:text-gray-200">
+                  Avaliação do Restaurante
                 </label>
                 <div className="flex space-x-2 justify-start mt-2">
                   {renderStars(ratingRestaurant, setRatingRestaurant)}
                 </div>
               </div>
             </div>
-
+          </div>
+          <div className="mt-4">
             <button
               type="submit"
               className="w-full px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-400 transition duration-300 text-sm sm:text-base dark:bg-yellow-600 dark:hover:bg-yellow-500">
@@ -165,6 +140,72 @@ const CommentSection = () => {
           </div>
         </form>
       </div>
+
+      {/* Comentários */}
+      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
+        {currentComments.map((comment) => (
+          <div
+            key={comment.id}
+            className="bg-white shadow-lg transform hover:scale-[1.02] p-6 rounded-lg  border border-gray-200 dark:border-gray-700 transition duration-300 hover:shadow-xl">
+            <div className="flex items-center mb-4">
+              <div className="bg-gray-200 dark:bg-gray-600 rounded-full w-14 h-14 flex items-center justify-center text-lg font-bold text-gray-700 dark:text-gray-200">
+                {comment.name.charAt(0)}
+              </div>
+              <div className="ml-4">
+                <p className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                  {comment.name}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {new Date(comment.date).toLocaleDateString()}
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center">
+                <span className="text-yellow-500">
+                  <span className="mr-2">🍲</span> Comida:{" "}
+                  {comment.ratings.food}/5
+                </span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-yellow-500">
+                  <span className="mr-2">🍽️</span> Atendimento:{" "}
+                  {comment.ratings.service}/5
+                </span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-yellow-500">
+                  <span className="mr-2">🏠</span> Restaurante:{" "}
+                  {comment.ratings.restaurant}/5
+                </span>
+              </div>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 mt-4">
+              {comment.comment}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Paginação */}
+      {comments.length > commentsPerPage && (
+        <div className="flex justify-center space-x-4 mt-8">
+          {[...Array(Math.ceil(comments.length / commentsPerPage))].map(
+            (_, index) => (
+              <button
+                key={index}
+                onClick={() => paginate(index + 1)}
+                className={`px-4 py-2 rounded-md text-lg ${
+                  currentPage === index + 1
+                    ? "bg-yellow-500 text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}>
+                {index + 1}
+              </button>
+            )
+          )}
+        </div>
+      )}
     </div>
   );
 };

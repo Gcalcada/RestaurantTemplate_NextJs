@@ -11,10 +11,10 @@ html body {
 html.light {
   --bg-color: white;
   --text-color: #333;
-  --cards-menu-bg: #cbdff6; 
+  --cards-menu-bg: #cbdff6;
   --cards-menu-text: #333333; /* Textos escuros */
   --cards-menu-title: #0f158e;
-  --cards-menu-bg-2:green;
+  --cards-menu-bg-2: green;
   --cards-menu-text-2: #e0e0e0;
 }
 
@@ -25,7 +25,7 @@ html.dark {
   --cards-menu-bg: #1e3a8a;
   --cards-menu-text: #e0e0e0; /* Cinza claro */
   --cards-menu-title: #ffcc00;
-  --cards-menu-bg-2:green;
+  --cards-menu-bg-2: green;
   --cards-menu-text-2: #e0e0e0;
 }
 
@@ -33,38 +33,35 @@ html.dark {
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-
-
 }
-.CardsMenu .bg-white{
-  background-color: var( --cards-menu-bg);
- 
+.CardsMenu .bg-white {
+  background-color: var(--cards-menu-bg);
 }
-.botao button{
-  background-color: var(--cards-menu-bg-2) !important; 
-  color:var(--cards-menu-text-2); 
+.botao button {
+  background-color: var(--cards-menu-bg-2) !important;
+  color: var(--cards-menu-text-2);
 }
 .botao button:hover {
-  background-color: var(--cards-menu-bg-2) !important; 
-  color:var(--cards-menu-text-2); 
+  background-color: var(--cards-menu-bg-2) !important;
+  color: var(--cards-menu-text-2);
 }
 
 .CardsTextoMenu p {
-  color:var(--cards-menu-text);
+  color: var(--cards-menu-text);
 }
 .CardsTextoMenu h2 {
-  color: var(--cards-menu-title) !important; 
+  color: var(--cards-menu-title) !important;
 }
 strong {
-
   color: var(--text-color);
 }
 .slick-prev,
 .slick-next {
   display: flex !important;
 }
-h1,h3,h4 {
-  
+h1,
+h3,
+h4 {
   color: var(--text-color);
 }
 .merda {
@@ -80,18 +77,14 @@ a {
 }
 
 a:hover {
-  color: #4B8BFF;
+  color: #4b8bff;
 }
-
-
-
 
 @media (max-width: 640px) {
   .react-icons {
-    font-size: 32px; 
+    font-size: 32px;
   }
 }
-
 
 .menu-item {
   background-color: white;
@@ -102,7 +95,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px; 
+  padding: 16px;
   height: 100%;
 }
 
@@ -139,15 +132,15 @@ a:hover {
 .item-actions a,
 .item-actions button {
   width: 100%;
-  max-width: 288px; 
-  padding: 16px; 
+  max-width: 288px;
+  padding: 16px;
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s ease-in-out;
 }
 
 .item-actions a {
-  background-color: #f59e0b; 
+  background-color: #f59e0b;
   color: white;
 }
 
@@ -156,15 +149,13 @@ a:hover {
 }
 
 .item-actions button {
-  background-color: #10b981; 
+  background-color: #10b981;
   color: white;
 }
 
 .item-actions button:hover {
   background-color: #059669;
 }
-
-
 
 /* Media Queries */
 
@@ -176,7 +167,7 @@ a:hover {
     grid-template-columns: 1fr !important;
     gap: 12px; /* Diminui o espaçamento entre os cards */
   }
-  
+
   .CardsMenu .bg-white {
     border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
     max-width: 100%;
@@ -187,42 +178,66 @@ a:hover {
     overflow: hidden;
     box-sizing: border-box;
     border-radius: 20px; /* Arredonda a borda do card */
-  
   }
-  
+
   /* Efeito de hover com borda arco-íris */
   .CardsMenu .bg-white:hover {
     animation: rainbow-border 3s ease-in-out infinite; /* Torna a animação mais suave */
   }
-  
+
   /* Animação de borda arco-íris usando box-shadow */
   @keyframes rainbow-border {
     0% {
-      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
     }
     14% {
-      box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1);
     }
     28% {
-      box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1);
     }
     42% {
-      box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1);
     }
     57% {
-      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1); 
+      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1);
     }
     71% {
-      box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1); 
+      box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1);
     }
     85% {
-      box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1); 
+      box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1);
     }
     100% {
-      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
     }
   }
-
+  @keyframes gradientAnimation {
+    0% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
+    }
+    14% {
+      box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1);
+    }
+    28% {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1);
+    }
+    42% {
+      box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1);
+    }
+    57% {
+      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1);
+    }
+    71% {
+      box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1);
+    }
+    85% {
+      box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1);
+    }
+    100% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
+    }
+  }
 
   /* Ajuste da imagem para ocupar todo o espaço disponível sem esticar */
   .CardsMenu img {
@@ -241,12 +256,6 @@ a:hover {
     font-size: 0.875rem;
     flex-direction: row; /* Tamanho menor para os textos */
   }
-
-  
-
-
-  
- 
 }
 
 /* Portrait Mode */
@@ -280,7 +289,7 @@ a:hover {
   .item-details p {
     font-size: 0.9rem;
   }
-  
+
   .CardsTextoMenu p {
     font-size: 14px;
     line-height: 1.2;
@@ -295,7 +304,6 @@ a:hover {
   }
 
   .CardsMenu {
-    
     width: 90%;
     margin: auto;
   }
@@ -303,45 +311,69 @@ a:hover {
     border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
     max-width: 100%;
     width: 100%;
-    
-    
+
     transition: all 0.3s ease-in-out;
     overflow: hidden;
     box-sizing: border-box;
     border-radius: 12px; /* Arredonda a borda do card */
-  
   }
-  
+
   /* Efeito de hover com borda arco-íris */
   .CardsMenu .bg-white:hover {
     animation: rainbow-border 3s ease-in-out infinite; /* Torna a animação mais suave */
   }
-  
+
   /* Animação de borda arco-íris usando box-shadow */
   @keyframes rainbow-border {
     0% {
-      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
     }
     14% {
-      box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1);
     }
     28% {
-      box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1);
     }
     42% {
-      box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1);
     }
     57% {
-      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1); 
+      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1);
     }
     71% {
-      box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1); 
+      box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1);
     }
     85% {
-      box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1); 
+      box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1);
     }
     100% {
-      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
+    }
+  }
+  @keyframes gradientAnimation {
+    0% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
+    }
+    14% {
+      box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1);
+    }
+    28% {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1);
+    }
+    42% {
+      box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1);
+    }
+    57% {
+      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1);
+    }
+    71% {
+      box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1);
+    }
+    85% {
+      box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1);
+    }
+    100% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
     }
   }
 }
@@ -350,22 +382,22 @@ a:hover {
 @media (min-width: 600px) and (max-width: 768px) {
   .menu-item {
     margin-bottom: 16px;
-    height: 100%; 
+    height: 100%;
   }
 
   .menu-item img {
-    height: 180px; 
+    height: 180px;
   }
 
   .item-actions {
     flex-direction: row;
     justify-content: space-between;
-    gap: 16px; 
+    gap: 16px;
   }
 
   .item-actions a,
   .item-actions button {
-    width: 48%; 
+    width: 48%;
     margin-bottom: 0;
   }
 
@@ -376,18 +408,16 @@ a:hover {
   .item-details p {
     font-size: 1rem;
   }
-  .CardsMenu{
+  .CardsMenu {
     width: 90%;
- margin:auto;
-   
-  
-}
+    margin: auto;
+  }
 }
 
 /* Para tablets grandes (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .menu-item {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
   }
 
   .menu-item img {
@@ -397,7 +427,7 @@ a:hover {
   .item-actions {
     flex-direction: row;
     justify-content: space-between;
-    gap: 16px; 
+    gap: 16px;
   }
 
   .item-actions a,
@@ -412,13 +442,11 @@ a:hover {
   .item-details p {
     font-size: 1.1rem;
   }
-  .CardsMenu{
+  .CardsMenu {
     width: 82%;
-padding-left: 16px  ;
-    margin-left:64px;
-    
-  
-}
+    padding-left: 16px;
+    margin-left: 64px;
+  }
 }
 
 /* Para desktops (acima de 1024px) */
@@ -430,12 +458,12 @@ padding-left: 16px  ;
   .item-actions {
     flex-direction: row;
     justify-content: space-between;
-    gap: 24px; 
+    gap: 24px;
   }
 
   .item-actions a,
   .item-actions button {
-    width: 120px; 
+    width: 120px;
   }
 
   .item-details h2 {
@@ -445,53 +473,74 @@ padding-left: 16px  ;
   .item-details p {
     font-size: 1.2rem;
   }
-  .CardsMenu{
-    
-    
-    margin-left:110px;
-  
-}
-.CardsMenu .bg-white {
-  border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
-  max-width: 100%;
-  width: 100%;
-  
-  
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-  box-sizing: border-box;
-  border-radius: 12px; /* Arredonda a borda do card */
+  .CardsMenu {
+    margin-left: 110px;
+  }
+  .CardsMenu .bg-white {
+    border: 5px solid transparent; /* Reduz a borda inicial para não interferir com o efeito */
+    max-width: 100%;
+    width: 100%;
 
-}
-.CardsMenu .bg-white:hover {
-  animation: rainbow-border 3s ease-in-out infinite; /* Torna a animação mais suave */
-}
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 12px; /* Arredonda a borda do card */
+  }
+  .CardsMenu .bg-white:hover {
+    animation: rainbow-border 3s ease-in-out infinite; /* Torna a animação mais suave */
+  }
 
-/* Animação de borda arco-íris usando box-shadow */
-@keyframes rainbow-border {
-  0% {
-    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
+  /* Efeito de hover */
+  .animate-rgb-gradient {
+    border: solid 4px white; /* Borda escura */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 12px; /* Bordas arredondadas */
   }
-  14% {
-    box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1); 
+  /* Animação de borda arco-íris usando box-shadow */
+  @keyframes rainbow-border {
+    0% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
+    }
+    14% {
+      box-shadow: 0 0 15px 5px rgba(255, 165, 0, 1);
+    }
+    28% {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1);
+    }
+    42% {
+      box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1);
+    }
+    57% {
+      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1);
+    }
+    71% {
+      box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1);
+    }
+    85% {
+      box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1);
+    }
+    100% {
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
+    }
   }
-  28% {
-    box-shadow: 0 0 15px 5px rgba(255, 255, 0, 1); 
+  @keyframes rgbFull {
+    0% {
+      border-color: rgb(255, 0, 0); /* Vermelho */
+    }
+    20% {
+      border-color: rgb(255, 165, 0); /* Laranja */
+    }
+    40% {
+      border-color: rgb(255, 255, 0); /* Amarelo */
+    }
+    60% {
+      border-color: rgb(0, 255, 0); /* Verde */
+    }
+    80% {
+      border-color: rgb(0, 0, 255); /* Azul */
+    }
+    100% {
+      border-color: rgb(75, 0, 130); /* Roxo */
+    }
   }
-  42% {
-    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1); 
-  }
-  57% {
-    box-shadow: 0 0 15px 5px rgba(0, 0, 255, 1); 
-  }
-  71% {
-    box-shadow: 0 0 15px 5px rgba(75, 0, 130, 1); 
-  }
-  85% {
-    box-shadow: 0 0 15px 5px rgba(238, 130, 238, 1); 
-  }
-  100% {
-    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); 
-  }
-}
 }

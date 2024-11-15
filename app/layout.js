@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Navbar from "./Components/Navbar";
 import { CartProvider } from "./Components/CartContext";
 import "./globals.css";
-import BreadcrumbsComponent from "./Components/BreadcrumbsComponent";
-// Update metadataBase to a string (use toString())
+import Footer from "./Components/Footer";
+
 export const metadata = {
   title: {
     template: "%s - My App",
@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
             <Navbar />
           </header>
           <main>{children}</main>
+          <Footer />
         </CartProvider>
       </body>
     </html>
