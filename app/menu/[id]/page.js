@@ -45,7 +45,7 @@ export default async function MenuItemDetails({ params }) {
                 <FaStar key={i} />
               ))}
             </div>
-            <span className="ml-2 text-gray-500">5 Customer Reviews</span>
+            <span className="ml-2 text-white">5 Customer Reviews</span>
           </div>
           <Typography variant="body1" className="merda2 mb-4">
             {menuItem.description}

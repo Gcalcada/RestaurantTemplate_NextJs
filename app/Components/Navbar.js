@@ -47,18 +47,21 @@ export default function Navbar() {
         theme === "light" ? "bg-color" : "bg-color"
       }`}>
       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold hover:text-yellow-400">
+        <Link
+          href="/"
+          className="text-2xl text-subtitle-3 font-bold hover:text-yellow-400">
           {" "}
           Restaurant
         </Link>
 
         {/* Botão de Menu Mobile */}
         <div className="lg:hidden text-2xl cursor-pointer" onClick={toggleMenu}>
-          {menuOpen ? <FaTimes /> : <FaBars />}
+          {menuOpen ? <FaTimes /> : <FaBars className="text-subtitle-3" />}
         </div>
 
         {/* Menu Desktop */}
-        <div className={`hidden lg:flex space-x-6 items-center`}>
+        <div
+          className={`hidden lg:flex text-subtitle-3 space-x-6 items-center`}>
           <Link href="/" className="text-lg hover:text-yellow-400">
             Home
           </Link>
@@ -88,32 +91,32 @@ export default function Navbar() {
       {/* Menu Mobile */}
       {menuOpen && (
         <div
-          className={`lg:hidden fixed inset-0 card-background bg-opacity-80 flex justify-center items-center z-30 transition-all duration-300 ease-in-out`}>
-          <div className="flex flex-col items-center card-background w-full h-full py-10">
+          className={`lg:hidden fixed inset-0 bg-opacity-80 card-menu-background flex justify-center items-center z-30 transition-all duration-300 ease-in-out`}>
+          <div className="flex flex-col items-center card-menu-background w-full h-full py-10">
             <button
               onClick={toggleMenu}
-              className="absolute top-6 right-6 text-3xl text-white">
+              className="absolute top-6 right-6  text-3xl ">
               <FaTimes />
             </button>
-            <div className="flex flex-col items-center space-y-6 text-white w-full px-4">
+            <div className="flex flex-col items-center space-y-6  w-full px-4">
               {/* Itens do menu mobile com ícones e texto */}
               <Link
                 href="/"
                 onClick={handleMenuItemClick}
-                className="flex items-center space-x-3 text-xl hover:bg-yellow-400 w-full py-3 text-center border-b border-gray-600">
+                className="flex items-center space-x-3 text-xl   w-full py-3 text-center border-b border-white">
                 <FaHome className="text-xl" />
                 <span>Home</span>
               </Link>
               <Link
                 href="/menu"
                 onClick={handleMenuItemClick}
-                className="flex items-center space-x-3 text-xl hover:bg-yellow-400 w-full py-3 text-center border-b border-gray-600">
+                className="flex items-center space-x-3 text-xl  w-full py-3 text-center border-b border-white">
                 <FaList className="text-xl" />
                 <span>Menu</span>
               </Link>
               <button
                 onClick={toggleTheme}
-                className="flex items-center space-x-3 text-xl w-full py-3 text-center border-b hover:bg-yellow-400 ">
+                className="flex items-center space-x-3 text-xl w-full py-3 text-center border-b border-white  ">
                 {theme === "light" ? <FaMoon /> : <FaSun />}
                 <span>Modo</span>
               </button>
@@ -122,7 +125,7 @@ export default function Navbar() {
               <Link
                 href="/Cart"
                 onClick={handleMenuItemClick}
-                className="flex items-center space-x-3 text-xl relative w-full py-3 text-center border-b ">
+                className="flex items-center space-x-3 text-xl relative w-full py-3 text-center border-b border-white ">
                 <FaShoppingCart />
                 {cartItems.length > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">

@@ -18,7 +18,7 @@ const BreadcrumbsComponent = () => {
         <Link
           href="/"
           passHref
-          className="no-underline text-red-500  hover:text-yellow-500 dark:hover:text-yellow-400 font-semibold">
+          className="no-underline text-yellow-400 hover:text-yellow-500 dark:hover:text-yellow-400 font-semibold">
           Home
         </Link>
 
@@ -29,7 +29,7 @@ const BreadcrumbsComponent = () => {
           return isLast ? (
             <Typography
               key={href}
-              className="text-blue-400 font-bold"
+              className="text-white font-bold"
               aria-current="page">
               {name.charAt(0).toUpperCase() + name.slice(1)}
             </Typography>
@@ -38,7 +38,7 @@ const BreadcrumbsComponent = () => {
               key={href}
               href={href}
               passHref
-              className="text-green-400 dark:text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-400">
+              className="text-yellow-400  hover:text-yellow-500 dark:hover:text-yellow-400">
               {name.charAt(0).toUpperCase() + name.slice(1)}
             </Link>
           );

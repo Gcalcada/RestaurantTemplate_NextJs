@@ -42,7 +42,8 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="py-12 px-6 sm:py-16 sm:px-8 bg-yellow-500 text-white">
+      id="AboutUs"
+      className="py-12 px-6 sm:py-16 sm:px-8 about-us">
       <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 md:items-center md:gap-12">
         <div className="flex justify-center md:mb-0">
           <Image
@@ -59,7 +60,7 @@ export default function About() {
         <div className="about-us-section text-center md:text-left">
           <h2 className="text-2xl sm:text-4xl font-bold mb-4">
             {isVisible && (
-              <span className="inline-block">
+              <span className="inline-block text-title-4">
                 <Typewriter.Paragraph typingSpeed={50}>
                   About Us
                 </Typewriter.Paragraph>
@@ -69,7 +70,7 @@ export default function About() {
 
           <div className="text-left text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
             {isVisible && (
-              <span className="inline-block">
+              <span className="inline-block text-subtitle-4">
                 <Typewriter.Paragraph typingSpeed={20}>
                   At our restaurant, we believe in bringing the freshest
                   ingredients and authentic flavors to your table. Our chefs are
@@ -82,7 +83,7 @@ export default function About() {
 
           <div className="text-left text-base sm:text-lg leading-relaxed mb-4">
             {isSecondVisible && ( // Exibe o segundo parágrafo após o primeiro
-              <span className="inline-block">
+              <span className="inline-block text-subtitle-4">
                 <Typewriter.Paragraph typingSpeed={30}>
                   Join us for an experience where tradition meets innovation,
                   and every dish is crafted with love and expertise. We are

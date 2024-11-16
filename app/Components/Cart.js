@@ -1,15 +1,9 @@
-// components/Cart.js
 "use client";
-import { useCart } from "../Components/CartContext"; // Importa o contexto do carrinho
-import {
-  FaPlus,
-  FaMinus,
-  FaTrash,
-  FaCheck,
-  FaShoppingCart,
-} from "react-icons/fa"; // Ícones de aumentar, diminuir, remover, aplicar e finalizar
+import { useCart } from "../Components/CartContext";
+import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";
 import Image from "next/image";
 import BreadcrumbsComponent from "../Components/BreadcrumbsComponent";
+
 export default function Cart() {
   const {
     cartItems,
@@ -22,114 +16,100 @@ export default function Cart() {
   return (
     <>
       <BreadcrumbsComponent />
-      <section className="py-8 px-4 sm:px-8 lg:px-16 darker:text-white min-h-screen mx-auto">
-        <div className="mx-4 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-12">
-          <h1 className="text-2xl font-bold mb-6">Menu</h1>
-        </div>
+      <section className="py-10 px-4 sm:px-6  bg-gradient-to-br  min-h-screen">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl font-bold mb-10 text-center text-white">
+            Meu Carrinho de Compras
+          </h1>
 
-        <h2 className="text-2xl font-semibold mb-6 mx-4 sm:mx-8 md:mx-12 ">
-          Carrinho de Compras
-        </h2>
-        <div className="card-background shadow-md rounded-lg p-6 mx-4 sm:mx-8 md:mx-10 lg:mx-12">
           {cartItems.length === 0 ? (
-            <p className="text-center text-black text-sm sm:text-base">
+            <p className="text-center text-lg text-white">
               O carrinho está vazio.
             </p>
           ) : (
-            <div>
-              <ul className="space-y-6">
-                {cartItems.map((item) => (
-                  <li
-                    key={item.id}
-                    className="flex flex-wrap justify-between items-center border-b py-6 mx-4 sm:mx-8 lg:mx-12">
-                    <div className="flex items-center space-x-4 w-full sm:w-auto">
-                      <Image
-                        width={100}
-                        height={100}
-                        quality={60}
-                        src={item.imageUrl}
-                        alt={item.name}
-                        className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-md shadow-md"
-                      />
-                      <div className="flex-1">
-                        <p className="text-base sm:text-xl font-medium text-yellow-400">
-                          {item.name}
-                        </p>
-                        <p className="text-xs sm:text-sm text-white">
-                          Preço unitário: $
-                          {item.price ? item.price.toFixed(2) : "0.00"}
-                        </p>
-                        <p className="text-xs sm:text-sm text-white">
-                          Quantidade: {item.quantity}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-2 sm:space-x-4 mt-4 sm:mt-0">
-                      <span className="text-lg sm:text-xl font-semibold text-white">
+            <div className="space-y-8">
+              {/* Lista de itens do carrinho */}
+              {cartItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="p-5 card-background  cart-item rounded-lg shadow-lg flex flex-col sm:flex-row gap-4 items-center sm:items-start transition-transform hover:scale-105">
+                  {/* Imagem do Produto */}
+                  <div className="flex justify-start">
+                    <Image
+                      width={100}
+                      height={100}
+                      src={item.imageUrl}
+                      alt={item.name}
+                      className="object-cover rounded-lg border border-gray-200 w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40"
+                    />
+                  </div>
+
+                  {/* Informações do Produto */}
+                  <div className="flex-1 text-left sm:text-left">
+                    <h2 className="text-lg font-semibold CardsTextoMenu">
+                      {item.name}
+                    </h2>
+                    <p className="text-sm CardsTextoMenu mt-1">
+                      Preço unitário:{" "}
+                      <span className="price-card font-medium">
+                        ${item.price.toFixed(2)}
+                      </span>
+                    </p>
+                    <p className="text-sm CardsTextoMenu">
+                      Subtotal:{" "}
+                      <span className="price-card font-medium">
                         ${(item.price * item.quantity).toFixed(2)}
                       </span>
-                      <div className="flex items-center space-x-2 sm:space-x-4">
-                        <button
-                          onClick={() => increaseQuantity(item.id)} // Função para aumentar a quantidade
-                          className="bg-blue-500 text-white rounded-full p-2 sm:p-3 hover:bg-blue-600 transition">
-                          <FaPlus size={16} className="sm:size={18}" />
-                        </button>
-                        <span className="text-base sm:text-lg text-gray-900">
-                          {item.quantity}
-                        </span>
-                        <button
-                          onClick={() => decreaseQuantity(item.id)} // Função para diminuir a quantidade
-                          className="bg-blue-500 text-white rounded-full p-2 sm:p-3 hover:bg-blue-600 transition">
-                          <FaMinus size={16} className="sm:size={18}" />
-                        </button>
-                        <button
-                          onClick={() => removeItem(item.id)} // Função para remover o item
-                          className="bg-red-500 text-white rounded-full p-2 sm:p-3 hover:bg-red-600 transition">
-                          <FaTrash size={16} className="sm:size={18}" />
-                        </button>
-                      </div>
+                    </p>
+                    <div className="flex  items-center gap-2">
+                      <button
+                        onClick={() => decreaseQuantity(item.id)}
+                        className=" bg-blue-600 p-2 rounded-full hover:bg-yellow-300 shadow-sm">
+                        <FaMinus />
+                      </button>
+                      <span className="text-lg font-semibold price-card">
+                        {item.quantity}
+                      </span>
+                      <button
+                        onClick={() => increaseQuantity(item.id)}
+                        className=" bg-blue-600 p-2 rounded-full hover:bg-yellow-300 shadow-sm">
+                        <FaPlus />
+                      </button>
+                      <button
+                        onClick={() => removeItem(item.id)}
+                        className="text-red-600 hover:text-red-800">
+                        <FaTrash size={20} />
+                      </button>
                     </div>
-                  </li>
-                ))}
-              </ul>
+                  </div>
 
-              <div className="flex flex-wrap justify-between items-center border-t pt-6 mt-8 mx-4 sm:mx-8 lg:mx-12">
-                <strong className="text-xl sm:text-2xl text-white ">
-                  Total:
-                </strong>
-                <strong className="text-xl sm:text-2xl text-yellow-400">
-                  ${totalPrice.toFixed(2)}
-                </strong>
-              </div>
+                  {/* Controles de Quantidade */}
 
-              {/* Campo de código de desconto */}
-              <div className="mt-6 mx-4 sm:mx-8 lg:mx-12">
-                <label
-                  htmlFor="discountCode"
-                  className="text-xs sm:text-sm text-white">
-                  Código de Desconto
-                </label>
-                <div className="flex flex-col sm:flex-row gap-2 mt-2">
+                  {/* Botão de Remover */}
+                </div>
+              ))}
+              <div className="p-6 bg-white mt-8 rounded-lg shadow-lg">
+                <div className="flex justify-between items-center mb-6">
+                  <p className="text-lg font-semibold text-gray-800">Total:</p>
+                  <p className="text-2xl font-bold text-green-600">
+                    ${totalPrice.toFixed(2)}
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4">
                   <input
-                    id="discountCode"
                     type="text"
-                    placeholder="Insira o código"
-                    className="w-full sm:w-1/2 p-2 sm:p-3 border rounded-md text-gray-700 text-sm sm:text-base"
+                    placeholder="Código de desconto"
+                    className="flex-1 p-3 border border-gray-300 rounded-md text-gray-700 shadow-sm"
                   />
-                  <button className="flex items-center justify-center bg-blue-600 text-white rounded-md hover:bg-blue-700 transition py-2 px-4 w-full sm:w-1/2">
-                    <FaCheck className="mr-2" size={16} />
+                  <button className="w-full sm:w-auto bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 shadow-md">
                     Aplicar
                   </button>
                 </div>
-              </div>
-
-              {/* Botão Finalizar Compra */}
-              <div className="mt-6 mx-4 sm:mx-8 lg:mx-12">
-                <button className="flex items-center justify-center w-full bg-green-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-md hover:bg-green-700 transition text-sm sm:text-base">
-                  <FaShoppingCart className="mr-2" size={16} />
+                <button className="w-full mt-4 bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 shadow-md text-lg font-medium">
                   Finalizar Compra
                 </button>
               </div>
+              {/* Resumo e Ações */}
             </div>
           )}
         </div>

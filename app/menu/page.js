@@ -40,7 +40,7 @@ export default async function Menu() {
                     ${item.price.toFixed(2)}
                   </p>
                 </div>
-                <div className="botao flex flex-row items-center mt-auto  ">
+                <div className="botao flex flex-row  items-center mt-auto  ">
                   <Link href={`/menu/${item.id}`} passHref>
                     <button
                       aria-label={`Adicionar ${item.name} ao carrinho`}

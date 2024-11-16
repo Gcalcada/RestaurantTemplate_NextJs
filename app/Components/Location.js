@@ -3,14 +3,14 @@ import "animate.css";
 
 export default function Location() {
   return (
-    <section className="py-12 px-4 text-center justify-center bg-yellow-500 text-white">
+    <section className="py-12 px-4 text-center justify-center about-us">
       {/* Título com animação de fadeInUp */}
-      <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 animate__animated animate__fadeInUp">
+      <h2 className="text-2xl text-title-4 sm:text-4xl font-bold mb-4 sm:mb-6 animate__animated animate__fadeInUp">
         Find Us
       </h2>
 
       {/* Texto com animação de fadeInUp com um delay */}
-      <p className="text-base sm:text-xl mb-4 sm:mb-6 animate__animated animate__fadeInUp animate__delay-1s">
+      <p className="text-base text-subtitle-4 sm:text-xl mb-4 sm:mb-6 animate__animated animate__fadeInUp animate__delay-1s">
         We are located in the heart of the city. Come visit us!
       </p>
 

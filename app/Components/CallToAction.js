@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function CallToAction() {
   return (
-    <section className="py-12 px-4 sm:py-16 bg-color text-center text-white">
-      <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white">
+    <section className="py-12 px-4 sm:py-16 bg-color text-center ">
+      <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-title-3">
         Ready to Taste Our Delicious Dishes?
       </h2>
-      <p className="text-base sm:text-lg mb-6 sm:mb-8">
+      <p className="text-base sm:text-lg mb-6 sm:mb-8 text-subtitle-3">
         Book a table now or explore our menu online.
       </p>
       <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">

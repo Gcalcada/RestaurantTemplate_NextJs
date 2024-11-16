@@ -24,7 +24,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-10 text-center bg-color">
-      <h2 className="text-xl sm:text-4xl md:text-5xl lg:text-4xl font-bold mb-8 text-white">
+      <h2 className="text-xl sm:text-4xl md:text-5xl lg:text-4xl font-bold mb-8 text-title-3">
         What Our Customers Say
       </h2>
       <div className="testimonial grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-full mx-auto px-4 sm:px-6 lg:px-8">
