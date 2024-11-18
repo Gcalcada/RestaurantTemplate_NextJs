@@ -23,12 +23,14 @@ export default function RootLayout({ children }) {
       <body>
         <ToastProvider>
           <CartProvider>
-            <header>
+            <header header aria-hidden="false" tabindex="-1">
               <Navbar />
             </header>
             <ToastMessage />
-            <main>{children}</main>
-            <Footer />
+            <main aria-hidden="false" tabindex="-1">
+              {children}
+            </main>
+            <Footer aria-hidden="false" tabindex="-1" />
           </CartProvider>
         </ToastProvider>
       </body>

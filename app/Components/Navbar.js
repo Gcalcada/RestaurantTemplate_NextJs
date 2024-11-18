@@ -107,7 +107,8 @@ export default function Navbar() {
       {/* Menu Mobile */}
       {menuOpen && (
         <div
-          className={`lg:hidden fixed inset-0 bg-opacity-80 card-menu-background flex justify-center items-center z-30 transition-all duration-300 ease-in-out`}>
+          className={`lg:hidden fixed inset-0 bg-opacity-80 card-menu-background flex justify-center items-center z-30 transition-all duration-300 ease-in-out`}
+          aria-hidden={!menuOpen}>
           <div className="flex flex-col items-center card-menu-background w-full h-full py-10">
             <button
               onClick={toggleMenu}
