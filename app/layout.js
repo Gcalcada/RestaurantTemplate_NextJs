@@ -27,7 +27,9 @@ export default function RootLayout({ children }) {
               <Navbar />
             </header>
             <ToastMessage />
-            <main aria-hidden="false">{children}</main>
+            <main aria-hidden="false" role="main">
+              {children}
+            </main>
             <Footer aria-hidden="false" />
           </CartProvider>
         </ToastProvider>

@@ -10,7 +10,7 @@ const Footer = () => {
       {/* Linha de divisão com borda branca */}
       <div className="h-1 bg-white mt-10"></div>
 
-      <footer className="footer-section  py-8 ">
+      <footer role="contentinfo" className="footer-section  py-8 ">
         <div className="mx-8 sm:mx-12 md:mx-20 lg:mx-28 flex ">
           {/* Container com colunas responsivas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">

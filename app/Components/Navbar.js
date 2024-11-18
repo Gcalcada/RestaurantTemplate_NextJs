@@ -43,6 +43,7 @@ export default function Navbar() {
 
   return (
     <nav
+      role="navigation"
       className={` items-center justify-center z-20 p-2 sm:p-4 ${
         theme === "light" ? "bg-color" : "bg-color"
       }`}>
