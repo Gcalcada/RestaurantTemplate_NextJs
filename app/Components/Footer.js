@@ -81,7 +81,7 @@ const Footer = () => {
                   <Link
                     href="#"
                     className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                    aria-label="Frequent answered questions">
+                    aria-label="FAQs">
                     FAQs
                   </Link>
                 </li>
@@ -123,9 +123,9 @@ const Footer = () => {
               <ul>
                 <li>
                   <Link
-                    href=""
+                    href="#"
                     className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                    aria-label="Restaurant Open 10:00 AM ">
+                    aria-label="Open: 10:00 AM">
                     Open: 10:00 AM
                   </Link>
                 </li>
@@ -133,7 +133,7 @@ const Footer = () => {
                   <Link
                     href="#"
                     className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                    aria-label="Restaurant Close 10:00 AM ">
+                    aria-label="Close: 10:00 AM">
                     Close: 10:00 AM
                   </Link>
                 </li>
@@ -147,17 +147,17 @@ const Footer = () => {
               </h5>
               <p>
                 <Link
-                  href=""
+                  href="#"
                   className="block mb-2 text-sm hover:text-yellow-400"
-                  aria-label="Email the restaurant">
+                  aria-label="restaurant@example.com">
                   restaurant@example.com
                 </Link>
               </p>
               <p>
                 <Link
-                  href=""
+                  href="#"
                   className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                  aria-label="Restaurant is located at   Praça do Comércio, n 110-111, Coimbra, Portugal">
+                  aria-label="Praça do Comércio, n 110-111, Coimbra, Portugal">
                   Praça do Comércio, n 110-111, Coimbra, Portugal
                 </Link>
               </p>
@@ -165,7 +165,7 @@ const Footer = () => {
                 <Link
                   href="#"
                   className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                  aria-label="Sorry, no phone number available">
+                  aria-label="Phone Number">
                   Phone Number
                 </Link>
               </p>
@@ -174,7 +174,7 @@ const Footer = () => {
                 <Link
                   href={"https://x.com/gcalcadaStudios"}
                   className="text-subtitle-3 hover:text-yellow-400"
-                  aria-label="Visit the X social network of the developer of this page with nextJs and tailwind">
+                  aria-label="gcalcadaStudios">
                   gcalcadaStudios
                 </Link>
               </p>
