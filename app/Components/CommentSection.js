@@ -104,7 +104,7 @@ const CommentSection = ({ productId }) => {
             />
             <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center justify-center  ">
               <div className="w-fit">
-                <label className="block text-sm text-gray-800 dark:text-gray-200">
+                <label className="block text-sm text-gray-800 ">
                   Avaliação da Comida
                 </label>
                 <div className="flex space-x-2 justify-start mt-2">
@@ -113,7 +113,7 @@ const CommentSection = ({ productId }) => {
               </div>
 
               <div className="w-fit">
-                <label className="block text-sm text-gray-800 dark:text-gray-200">
+                <label className="block text-sm text-gray-800">
                   Avaliação do Atendimento
                 </label>
                 <div className="flex space-x-2 justify-start mt-2">
@@ -122,7 +122,7 @@ const CommentSection = ({ productId }) => {
               </div>
 
               <div className="w-fit">
-                <label className="block text-sm text-gray-800 dark:text-gray-200">
+                <label className="block text-sm text-gray-800 ">
                   Avaliação do Restaurante
                 </label>
                 <div className="flex space-x-2 justify-start mt-2">
@@ -134,7 +134,7 @@ const CommentSection = ({ productId }) => {
           <div className="mt-4">
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-400 transition duration-300 text-sm sm:text-base dark:bg-yellow-600 dark:hover:bg-yellow-500">
+              className="w-full px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-400 transition duration-300 text-sm sm:text-base ">
               Enviar Comentário
             </button>
           </div>
@@ -148,14 +148,14 @@ const CommentSection = ({ productId }) => {
             key={comment.id}
             className="bg-white shadow-lg transform hover:scale-[1.02] p-6 rounded-lg  border border-gray-200 dark:border-gray-700 transition duration-300 hover:shadow-xl">
             <div className="flex items-center mb-4">
-              <div className="bg-gray-200 dark:bg-gray-600 rounded-full w-14 h-14 flex items-center justify-center text-lg font-bold text-gray-700 dark:text-gray-200">
+              <div className="bg-gray-200rounded-full w-14 h-14 flex items-center justify-center text-lg font-bold text-gray-700 ">
                 {comment.name.charAt(0)}
               </div>
               <div className="ml-4">
-                <p className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                <p className="text-lg font-semibold text-gray-800 ">
                   {comment.name}
                 </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
+                <p className="text-xs text-gray-500 ">
                   {new Date(comment.date).toLocaleDateString()}
                 </p>
               </div>
@@ -180,9 +180,7 @@ const CommentSection = ({ productId }) => {
                 </span>
               </div>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mt-4">
-              {comment.comment}
-            </p>
+            <p className="text-gray-700  mt-4">{comment.comment}</p>
           </div>
         ))}
       </div>
