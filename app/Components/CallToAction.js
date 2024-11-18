@@ -18,7 +18,7 @@ export default function CallToAction() {
         </Link>
         <Link
           href="/menu"
-          className="px-8 py-4 sm:px-8 lg:px-12 text-sm sm:text-lg lg:text-xl font-semibold text-white button-bg-color transition-all duration-300 rounded-[12px] shadow-lg transform hover:scale-105 hover:opacity-90 hover:shadow-lg hover:shadow-yellow-500 hover:text-yellow-200 group "
+          className="px-8 py-4 sm:px-8 lg:px-12 text-sm sm:text-lg lg:text-xl font-semibold text-white button-bg-color transition-all duration-300 rounded-[12px] shadow-lg transform hover:scale-105 hover:opacity-90 hover:shadow-lg hover:shadow-yellow-500 hover:text-yellow-500 group "
           aria-label="Click to explore the menu">
           Explore the Menu
         </Link>
