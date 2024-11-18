@@ -124,14 +124,16 @@ const Footer = () => {
                 <li>
                   <Link
                     href=""
-                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                    aria-label="Restaurant Open 10:00 AM ">
                     Open: 10:00 AM
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href=""
-                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                    href="#"
+                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                    aria-label="Restaurant Close 10:00 AM ">
                     Close: 10:00 AM
                   </Link>
                 </li>
@@ -148,7 +150,6 @@ const Footer = () => {
                   href=""
                   className="block mb-2 text-sm hover:text-yellow-400"
                   aria-label="Email the restaurant">
-                  {" "}
                   restaurant@example.com
                 </Link>
               </p>
@@ -174,7 +175,7 @@ const Footer = () => {
                   href={"https://x.com/gcalcadaStudios"}
                   className="text-subtitle-3 hover:text-yellow-400"
                   aria-label="Visit the X social network of the developer of this page with nextJs and tailwind">
-                  @gcalcadaStudios
+                  gcalcadaStudios
                 </Link>
               </p>
             </div>
