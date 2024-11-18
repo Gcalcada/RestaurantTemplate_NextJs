@@ -11,7 +11,7 @@ const BreadcrumbsComponent = () => {
   const pathNames = pathname.split("/").filter((x) => x);
 
   return (
-    <div className="mx-6 sm:mx-8 md:mx-16 lg:mx-24 p-4 sm:p-4 mb-2 sm:mb-4">
+    <div className="mx-3 sm:mx-8 md:mx-16 lg:mx-24 p-4 sm:p-4 mb-2 sm:mb-4">
       <Breadcrumbs
         aria-label="breadcrumb"
         separator={<span className="text-blue-400"> &gt; </span>}>

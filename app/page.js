@@ -5,7 +5,7 @@ import Testimonials from "./Components/Testimonials";
 import Location from "./Components/Location";
 import CallToAction from "./Components/CallToAction";
 import Bot from "./Components/Bot"; // Importe o Bot
-import ToastMessage from "./Components/ToastMessage";
+
 export const metadata = {
   title: "Restaurant",
 };
@@ -21,7 +21,6 @@ export default function Home() {
       <Testimonials />
       <Location />
       <CallToAction />
-      <ToastMessage />
       {/* Seção do Bot (apoio ao cliente) */}
       <Bot /> {/* O bot está aqui */}
     </section>
