@@ -146,9 +146,9 @@ const CommentSection = ({ productId }) => {
         {currentComments.map((comment) => (
           <div
             key={comment.id}
-            className="bg-white shadow-lg transform hover:scale-[1.02] p-6 rounded-lg  border border-gray-200 dark:border-gray-700 transition duration-300 hover:shadow-xl">
+            className="bg-white shadow-lg transform hover:scale-[1.02] p-6 rounded-lg  border border-gray-200  transition duration-300 hover:shadow-xl">
             <div className="flex items-center mb-4">
-              <div className="bg-gray-200rounded-full w-14 h-14 flex items-center justify-center text-lg font-bold text-gray-700 ">
+              <div className="bg-gray-200rounded-full w-14 h-14 flex items-center justify-center text-lg font-bold text-gray-700 border border-black rounded-xl">
                 {comment.name.charAt(0)}
               </div>
               <div className="ml-4">

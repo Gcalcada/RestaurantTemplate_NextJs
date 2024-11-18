@@ -18,7 +18,7 @@ export default function Cart() {
       <BreadcrumbsComponent />
       <section className="py-10 px-4 sm:px-6  bg-gradient-to-br  min-h-screen">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-10 text-center text-white">
+          <h1 className="text-xl font-bold mb-10 text-center text-white">
             Meu Carrinho de Compras
           </h1>
 
@@ -88,14 +88,14 @@ export default function Cart() {
                   {/* Botão de Remover */}
                 </div>
               ))}
-              <div className="p-6 bg-white mt-8 rounded-lg shadow-lg">
+              <div className="p-6 bg-white mt-8 rounded-lg shadow-lg card-background">
                 <div className="flex justify-between items-center mb-6">
-                  <p className="text-lg font-semibold text-gray-800">Total:</p>
-                  <p className="text-2xl font-bold text-green-600">
+                  <p className="text-lg font-semibold text-white">Total:</p>
+                  <p className="text-2xl font-bold text-red-600">
                     ${totalPrice.toFixed(2)}
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 ">
                   <input
                     type="text"
                     placeholder="Código de desconto"
@@ -105,7 +105,7 @@ export default function Cart() {
                     Aplicar
                   </button>
                 </div>
-                <button className="w-full mt-4 bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 shadow-md text-lg font-medium">
+                <button className="w-full sm:w-auto mt-4 bg-yellow-400 text-black py-3 px-6 rounded-lg hover:bg-blue-700 shadow-md">
                   Finalizar Compra
                 </button>
               </div>

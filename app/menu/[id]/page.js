@@ -32,11 +32,14 @@ export default async function MenuItemDetails({ params }) {
         />
 
         {/* Product Details */}
-        <div className="w-full lg:w-1/2">
-          <Typography variant="h4" gutterBottom className="text-yellow-500">
+        <div className="w-full ">
+          <Typography
+            variant="h5"
+            gutterBottom
+            className="text-yellow-500 text-2xl font-bold">
             {menuItem.name}
           </Typography>
-          <Typography variant="body1" className=" mb-2">
+          <Typography variant="subtitle1" className=" mb-2">
             <strong>Price:</strong> ${menuItem.price}
           </Typography>
           <div className="flex items-center mb-4">
@@ -45,20 +48,22 @@ export default async function MenuItemDetails({ params }) {
                 <FaStar key={i} />
               ))}
             </div>
-            <span className="ml-2 text-white">5 Customer Reviews</span>
+            <Typography variant="subtitle2">
+              <span className="ml-2 text-white">5 Customer Reviews</span>
+            </Typography>
           </div>
-          <Typography variant="body1" className="merda2 mb-4">
+          <Typography variant="subtitle2" className="merda2 mb-4">
             {menuItem.description}
           </Typography>
 
           {/* Additional Info */}
-          <Typography variant="body1">
+          <Typography variant="subtitle2">
             <strong>Ingredients:</strong> {menuItem.ingredients}
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="subtitle2">
             <strong>Chef:</strong> {menuItem.chef}
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="subtitle2">
             <strong>Cooking Time:</strong> {menuItem.cookingTime} min
           </Typography>
 
