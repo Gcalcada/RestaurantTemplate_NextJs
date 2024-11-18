@@ -45,7 +45,7 @@ const ToastMessage = () => {
           )} transition-all duration-300 ease-in-out`}
           role="alert">
           <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8">
-            {getToastIcon(toast.type)} {/* Ícone do toast */}
+            {getToastIcon(toast.type)}
           </div>
           <div className="mx-2 text-sm sm:text-base font-normal text-white">
             {toast.message}
@@ -56,7 +56,7 @@ const ToastMessage = () => {
             aria-label="Close"
             onClick={() => handleClose(toast.id)} // Chama a função de fechar
           >
-            <CloseIcon className="text-gray-500" />
+            <CloseIcon aria-label="Close" className="text-gray-500" />
           </button>
         </div>
       ))}

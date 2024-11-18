@@ -23,21 +23,24 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/"
-                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                    aria-label={`Home`}>
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/menu"
-                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                    aria-label={`Menu`}>
                     Menu
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/#AboutUs"
-                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                    aria-label={`About Us`}>
                     About Us
                   </Link>
                 </li>
@@ -53,28 +56,32 @@ const Footer = () => {
                 <li>
                   <Link
                     href="#"
-                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                    aria-label={`Privacy Policy`}>
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="#"
-                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                    aria-label={`Terms of service`}>
                     Terms of Service
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/Reservations"
-                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                    aria-label={`Reserve a table`}>
                     Reserve a Table
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="#"
-                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                    className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                    aria-label={`Frequent answered questions`}>
                     FAQs
                   </Link>
                 </li>
@@ -89,17 +96,20 @@ const Footer = () => {
               <div className="flex gap-4">
                 <Link
                   href="#"
-                  className="text-subtitle-3 hover:text-yellow-400">
+                  className="text-subtitle-3 hover:text-yellow-400"
+                  aria-label={`Go into facebook of the restaurant`}>
                   <FaFacebookF size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="text-subtitle-3 hover:text-yellow-400">
+                  className="text-subtitle-3 hover:text-yellow-400"
+                  aria-label={`Go into Linkedin of the restaurant`}>
                   <FaLinkedinIn size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="text-subtitle-3 hover:text-yellow-400">
+                  className="text-subtitle-3 hover:text-yellow-400"
+                  aria-label={`Go into X of the restaurant`}>
                   <FaTwitter size={20} />
                 </Link>
               </div>
@@ -141,14 +151,16 @@ const Footer = () => {
               <p>
                 <Link
                   href=""
-                  className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                  className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                  aria-label={`Restaurant is located at   Praça do Comércio, n 110-111, Coimbra, Portugal`}>
                   Praça do Comércio, n 110-111, Coimbra, Portugal
                 </Link>
               </p>
               <p>
                 <Link
-                  href="tel:+356911533126"
-                  className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400">
+                  href="#"
+                  className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
+                  aria-label={`Sorry we Dont have a number `}>
                   Phone Number
                 </Link>
               </p>
@@ -156,7 +168,8 @@ const Footer = () => {
                 &copy; {new Date().toLocaleString()}{" "}
                 <Link
                   href={"https://x.com/gcalcadaStudios"}
-                  className="text-subtitle-3 hover:text-yellow-400">
+                  className="text-subtitle-3 hover:text-yellow-400"
+                  aria-label="Visit the X social network of the developer of this page with nextJs and tailwind">
                   @gcalcadaStudios
                 </Link>
               </p>

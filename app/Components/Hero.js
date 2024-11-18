@@ -28,7 +28,8 @@ export default function Hero() {
         <div className="mt-6 sm:mt-8">
           <Link
             href="/menu"
-            className="px-8 py-4 sm:px-8 lg:px-12 text-sm sm:text-lg lg:text-xl font-semibold text-white button-bg-color transition-all duration-300 rounded-[12px] shadow-lg transform hover:scale-105 hover:opacity-90 hover:shadow-lg hover:shadow-yellow-500 hover:text-yellow-500 group">
+            className="px-8 py-4 sm:px-8 lg:px-12 text-sm sm:text-lg lg:text-xl font-semibold text-white button-bg-color transition-all duration-300 rounded-[12px] shadow-lg transform hover:scale-105 hover:opacity-90 hover:shadow-lg hover:shadow-yellow-500 hover:text-yellow-500 group"
+            aria-label="Explore our menu">
             Explore Our Menu
             <ArrowForwardIcon className="ml-2 text-white text-lg transition-all duration-300 transform group-hover:text-yellow-500 group-hover:scale-105" />
           </Link>

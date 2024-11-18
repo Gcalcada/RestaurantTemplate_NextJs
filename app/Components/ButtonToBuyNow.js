@@ -26,13 +26,19 @@ export default function ButtonToBuyNow({ item }) {
           style={{ borderRadius: "16px" }}>
           <button
             onClick={decreaseQuantity}
-            className="px-3 py-1  bg-yellow-400 text-black rounded-r-xl hover:bg-yellow-600 focus:outline-none transition duration-200">
+            className="px-3 py-1  bg-yellow-400 text-black rounded-r-xl hover:bg-yellow-600 focus:outline-none transition duration-200 "
+            aria-label="Decrease Quantity">
             -
           </button>
-          <span className="mx-4 text-xl">{quantity}</span>
+          <span
+            className="mx-4 text-xl"
+            aria-label={`You have ${quantity} items`}>
+            {quantity}
+          </span>
           <button
             onClick={increaseQuantity}
-            className="px-3 py-1  bg-yellow-400 text-black items-start  rounded-l-xl hover:bg-yellow-600 focus:outline-none transition duration-200">
+            className="px-3 py-1  bg-yellow-400 text-black items-start  rounded-l-xl hover:bg-yellow-600 focus:outline-none transition duration-200"
+            aria-label="Decrease Quantity">
             +
           </button>
         </div>
@@ -40,7 +46,8 @@ export default function ButtonToBuyNow({ item }) {
         {/* Buy Now Button */}
         <button
           onClick={handleAddToCart}
-          className="flex items-center justify-center bg-yellow-400 text-gray-900 border border-transparent hover:bg-yellow-400 transition duration-300 shadow-md h-16 w-52 rounded-lg dark:bg-yellow-600 dark:text-white dark:hover:bg-yellow-500">
+          className="flex items-center justify-center bg-yellow-400 text-gray-900 border border-transparent hover:bg-yellow-400 transition duration-300 shadow-md h-16 w-52 rounded-lg dark:bg-yellow-600 dark:text-white dark:hover:bg-yellow-500"
+          aria-label={`Buy ${item.name}`}>
           <FaShoppingCart className="mr-2" />
           Comprar
         </button>

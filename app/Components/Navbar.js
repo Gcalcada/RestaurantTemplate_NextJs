@@ -49,7 +49,8 @@ export default function Navbar() {
       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 flex justify-between items-center">
         <Link
           href="/"
-          className="text-2xl text-subtitle-3 font-bold hover:text-yellow-400">
+          className="text-2xl text-subtitle-3 font-bold hover:text-yellow-400"
+          aria-label="Restaurant Logo ">
           {" "}
           Restaurant
         </Link>
@@ -62,23 +63,38 @@ export default function Navbar() {
         {/* Menu Desktop */}
         <div
           className={`hidden lg:flex text-subtitle-3 space-x-6 items-center`}>
-          <Link href="/" className="text-lg hover:text-yellow-400">
+          <Link
+            href="/"
+            className="text-lg hover:text-yellow-400"
+            aria-label="Home">
             Home
           </Link>
-          <Link href="/menu" className="text-lg hover:text-yellow-400">
+          <Link
+            href="/menu"
+            className="text-lg hover:text-yellow-400"
+            aria-label="Menu ">
             Menu
           </Link>
-          <button onClick={toggleTheme} className="text-xl">
+          <button
+            onClick={toggleTheme}
+            className="text-xl"
+            aria-label="You could choose light mode or dark mode">
             {theme === "light" ? (
-              <FaMoon />
+              <FaMoon aria-label="dark mode" />
             ) : (
-              <FaSun className="hover:text-yellow-400" />
+              <FaSun
+                aria-label="Light mode"
+                className="hover:text-yellow-400"
+              />
             )}
           </button>
 
           {/* Carrinho */}
-          <Link href="/Cart" className="text-xl relative">
-            <FaShoppingCart className="hover:text-yellow-400" />
+          <Link href="/Cart" className="text-xl relative" aria-label="Cart">
+            <FaShoppingCart
+              className="hover:text-yellow-400"
+              aria-label="Your cart"
+            />
             {cartItems.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500   hover:text-yellow-400 rounded-full text-xs px-1">
                 {cartItems.length}
@@ -95,7 +111,8 @@ export default function Navbar() {
           <div className="flex flex-col items-center card-menu-background w-full h-full py-10">
             <button
               onClick={toggleMenu}
-              className="absolute top-6 right-6  text-3xl ">
+              className="absolute top-6 right-6  text-3xl "
+              aria-label="Open Menu">
               <FaTimes />
             </button>
             <div className="flex flex-col items-center space-y-6  w-full px-4">
@@ -105,27 +122,28 @@ export default function Navbar() {
                 onClick={handleMenuItemClick}
                 className="flex items-center space-x-3 text-xl   w-full py-3 text-center border-b border-white">
                 <FaHome className="text-xl" />
-                <span>Home</span>
+                <span aria-label="Home">Home</span>
               </Link>
               <Link
                 href="/menu"
                 onClick={handleMenuItemClick}
                 className="flex items-center space-x-3 text-xl  w-full py-3 text-center border-b border-white">
                 <FaList className="text-xl" />
-                <span>Menu</span>
+                <span aria-label="Menu">Menu</span>
               </Link>
               <button
                 onClick={toggleTheme}
-                className="flex items-center space-x-3 text-xl w-full py-3 text-center border-b border-white  ">
+                className="flex items-center space-x-3 text-xl w-full py-3 text-center border-b border-white">
                 {theme === "light" ? <FaMoon /> : <FaSun />}
-                <span>Modo</span>
+                <span aria-label="Mode Light or dark">Modo</span>
               </button>
 
               {/* Carrinho */}
               <Link
                 href="/Cart"
                 onClick={handleMenuItemClick}
-                className="flex items-center space-x-3 text-xl relative w-full py-3 text-center border-b border-white ">
+                className="flex items-center space-x-3 text-xl relative w-full py-3 text-center border-b border-white "
+                aria-label="Go to your cart">
                 <FaShoppingCart />
                 {cartItems.length > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">
@@ -177,7 +195,9 @@ export default function Navbar() {
               </p>
             </div>
 
-            <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
+            <button
+              className="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+              aria-label="Finish your buy">
               Finalizar Compra
             </button>
           </div>

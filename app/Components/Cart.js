@@ -101,11 +101,15 @@ export default function Cart() {
                     placeholder="Código de desconto"
                     className="flex-1 p-3 border border-gray-300 rounded-md text-gray-700 shadow-sm"
                   />
-                  <button className="w-full sm:w-auto bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 shadow-md">
+                  <button
+                    className="w-full sm:w-auto bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 shadow-md"
+                    aria-label="Aply the promo code please">
                     Aplicar
                   </button>
                 </div>
-                <button className="w-full sm:w-auto mt-4 bg-yellow-400 text-black py-3 px-6 rounded-lg hover:bg-blue-700 shadow-md">
+                <button
+                  className="w-full sm:w-auto mt-4 bg-yellow-400 text-black py-3 px-6 rounded-lg hover:bg-blue-700 shadow-md"
+                  aria-label="Finish your buy">
                   Finalizar Compra
                 </button>
               </div>

@@ -193,6 +193,7 @@ const CommentSection = ({ productId }) => {
               <button
                 key={index}
                 onClick={() => paginate(index + 1)}
+                aria-label={`Go to page number ${index + 1}`}
                 className={`px-4 py-2 rounded-md text-lg ${
                   currentPage === index + 1
                     ? "bg-yellow-500 text-white"
