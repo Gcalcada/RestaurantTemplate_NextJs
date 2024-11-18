@@ -15,7 +15,7 @@ html.light {
   --text-color-title-3: #ffffff;
   --text-color-3: #ffffff;
   --cards-menu-bg: #2c958c;
-  --cards-menu-text: #ffffff; /* Textos escuros */
+  --cards-menu-text: #ffffff;
   --cards-menu-title: #ffcc00;
   --cards-menu-bg-2: #3566b6;
   --cards-menu-text-2: #e0e0e0;
@@ -40,7 +40,7 @@ html.dark {
   --text-color: #ffffff;
   --text-color-2: #000000;
   --cards-menu-bg: #38365e;
-  --cards-menu-text: #e0e0e0; /* Cinza claro */
+  --cards-menu-text: #e0e0e0;
   --cards-menu-title: #ffcc00;
   --cards-menu-bg-2: #866fe2;
   --cards-menu-text-2: #e0e0e0;
@@ -65,6 +65,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+
 .card-menu-background {
   background-color: var(--bg-color-menu);
   color: var(--text-color-menu);
@@ -99,13 +100,13 @@ body {
   color: var(--text-color);
 }
 .card-background {
-  position: relative; /* Torna o contêiner pai relativo */
+  position: relative;
   background-color: var(--card-background);
   box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
     0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
     0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
   will-change: transform, box-shadow;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transições para o efeito de hover */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   backface-visibility: hidden;
 }
 
@@ -117,21 +118,20 @@ body {
   right: 0;
   bottom: 0;
   background-color: inherit;
-  z-index: -1; /* Garante que o fundo fique atrás do conteúdo */
-  transition: filter 0.3s ease; /* Animação suave apenas para o filtro */
-  filter: brightness(1); /* Filtro inicial para brilho */
+  z-index: -1;
+  transition: filter 0.3s ease;
+  filter: brightness(1);
 }
 
-/* Efeito de brilho suave no hover/focus */
 .card-background:hover::before,
 .card-background:focus::before {
-  filter: brightness(1.1); /* Aumenta o brilho suavemente */
+  filter: brightness(1.1);
 }
 
 .card-background:hover,
 .card-background:focus {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05); /* Aplica uma leve escala no hover */
+  transform: scale(1.05);
   outline: none;
 }
 
@@ -269,10 +269,10 @@ a:hover {
 /* Para dispositivos móveis */
 
 /* Landscape Mode */
-@media screen and (min-width: 320px) and (max-width: 900px) and (orientation: landscape) {
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
   .CardsMenu {
     grid-template-columns: 1fr !important;
-    gap: 12px; /* Diminui o espaçamento entre os cards */
+    gap: 12px;
   }
 
   .CardsMenu .bg-white {
@@ -283,12 +283,11 @@ a:hover {
     transition: all 0.3s ease-in-out;
     overflow: hidden;
     box-sizing: border-box;
-    border-radius: 20px; /* Arredonda a borda do card */
+    border-radius: 20px;
   }
 
-  /* Efeito de hover com borda arco-íris */
   .CardsMenu .bg-white:hover {
-    animation: rainbow-border 3s ease-in-out infinite; /* Torna a animação mais suave */
+    animation: rainbow-border 3s ease-in-out infinite;
   }
 
   /* Animação de borda arco-íris usando box-shadow */
@@ -386,6 +385,7 @@ a:hover {
 
   .CardsMenu {
     width: 92.5%;
+
     margin: auto;
   }
   .CardsMenu .bg-white {
@@ -393,6 +393,9 @@ a:hover {
     overflow: hidden;
     box-sizing: border-box;
     border-radius: 12px; /* Arredonda a borda do card */
+  }
+  .CardsMenu img {
+    height: 20%;
   }
 
   /* Efeito de hover com borda arco-íris */
@@ -526,9 +529,7 @@ a:hover {
     font-size: 1.1rem;
   }
   .CardsMenu {
-    width: 82%;
-    padding-left: 16px;
-    margin-left: 64px;
+    width: 90%;
   }
 }
 

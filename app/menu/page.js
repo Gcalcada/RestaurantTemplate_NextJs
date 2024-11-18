@@ -1,9 +1,10 @@
 import Image from "next/image";
+
 import Link from "next/link";
 import { FaInfoCircle, FaShoppingCart } from "react-icons/fa";
 import Breadcrumbs from "../Components/BreadcrumbsComponent";
 import AddToCartButton from "../Components/Button";
-
+import ToastMessage from "../Components/ToastMessage";
 import { menuItems } from "../menuData";
 
 export const metadata = {
@@ -12,10 +13,10 @@ export const metadata = {
 
 export default async function Menu() {
   const menuData = menuItems;
-
   return (
     <>
       <Breadcrumbs />
+
       <section>
         <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 flex">
           <h1 className="text-2xl font-bold p-2 sm:p-4">Menu</h1>
@@ -40,15 +41,16 @@ export default async function Menu() {
                     ${item.price.toFixed(2)}
                   </p>
                 </div>
-                <div className="botao flex flex-row  items-center mt-auto  ">
+                <div className="botao w-1/2 flex gap-2  justify-start">
                   <Link href={`/menu/${item.id}`} passHref>
                     <button
                       aria-label={`Adicionar ${item.name} ao carrinho`}
-                      className=" flex flex-wrap items-center rounded-lg justify-between px-3 py-2 mr-2">
+                      className=" flex items-center justify-center  w-full  px-3 py-2 rounded-lg transition duration-300">
                       <FaInfoCircle className="mr-2" />
                       Detalhes
                     </button>
                   </Link>
+
                   <AddToCartButton item={item}>
                     <FaShoppingCart className="mr-2" />
                     Comprar

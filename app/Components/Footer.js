@@ -10,8 +10,8 @@ const Footer = () => {
       {/* Linha de divisão com borda branca */}
       <div className="h-1 bg-white mt-10"></div>
 
-      <footer className="footer-section py-8 px-6 sm:px-12 md:px-24">
-        <div className="max-w-screen-xl mx-auto">
+      <footer className="footer-section  py-8 ">
+        <div className="mx-8 sm:mx-12 md:mx-20 lg:mx-28 flex ">
           {/* Container com colunas responsivas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {/* Seção de Navegação */}
@@ -152,21 +152,19 @@ const Footer = () => {
                   Phone Number
                 </Link>
               </p>
+              <p className="text-sm text-subtitle-3">
+                &copy; {new Date().toLocaleString()}{" "}
+                <Link
+                  href={"https://x.com/gcalcadaStudios"}
+                  className="text-subtitle-3 hover:text-yellow-400">
+                  @gcalcadaStudios
+                </Link>
+              </p>
             </div>
           </div>
         </div>
 
         {/* Rodapé com a Rede Social X */}
-        <div className="text-center mt-8">
-          <p className="text-sm text-subtitle-3">
-            &copy; {new Date().toLocaleString()}{" "}
-            <Link
-              href={"https://x.com/gcalcadaStudios"}
-              className="text-subtitle-3 hover:text-yellow-400">
-              @gcalcadaStudios
-            </Link>
-          </p>
-        </div>
       </footer>
     </>
   );

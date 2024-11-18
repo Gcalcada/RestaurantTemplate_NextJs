@@ -1,0 +1,4 @@
+[
+  { "id": 1, "message": "Produto adicionado ao carrinho!", "type": "success" },
+  { "id": 2, "message": "Erro ao adicionar o produto.", "type": "error" }
+]

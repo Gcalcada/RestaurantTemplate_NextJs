@@ -5,7 +5,8 @@ import Navbar from "./Components/Navbar";
 import { CartProvider } from "./Components/CartContext";
 import "./globals.css";
 import Footer from "./Components/Footer";
-
+import { ToastProvider } from "./hooks/useToast";
+import ToastMessage from "./Components/ToastMessage";
 export const metadata = {
   title: {
     template: "%s - My App",
@@ -20,14 +21,16 @@ export default function RootLayout({ children }) {
     <html suppressHydrationWarning={true}>
       <head />
       <body>
-        {/* O CartProvider envolve todo o conteúdo para que o contexto esteja acessível */}
-        <CartProvider>
-          <header>
-            <Navbar />
-          </header>
-          <main>{children}</main>
-          <Footer />
-        </CartProvider>
+        <ToastProvider>
+          <CartProvider>
+            <header>
+              <Navbar />
+            </header>
+            <ToastMessage />
+            <main>{children}</main>
+            <Footer />
+          </CartProvider>
+        </ToastProvider>
       </body>
     </html>
   );
