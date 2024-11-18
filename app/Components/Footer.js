@@ -146,13 +146,17 @@ const Footer = () => {
               <p>
                 <Link
                   href=""
-                  className="block mb-2 text-sm hover:text-yellow-400"></Link>
+                  className="block mb-2 text-sm hover:text-yellow-400"
+                  aria-label="Email the restaurant">
+                  {" "}
+                  restaurant@example.com
+                </Link>
               </p>
               <p>
                 <Link
                   href=""
                   className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                  aria-label={`Restaurant is located at   Praça do Comércio, n 110-111, Coimbra, Portugal`}>
+                  aria-label="Restaurant is located at   Praça do Comércio, n 110-111, Coimbra, Portugal">
                   Praça do Comércio, n 110-111, Coimbra, Portugal
                 </Link>
               </p>
@@ -160,7 +164,7 @@ const Footer = () => {
                 <Link
                   href="#"
                   className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                  aria-label={`Sorry we Dont have a number `}>
+                  aria-label="Sorry, no phone number available">
                   Phone Number
                 </Link>
               </p>
