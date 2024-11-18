@@ -23,7 +23,7 @@ export default async function MenuItemDetails({ params }) {
   return (
     <>
       <Breadcrumbs />
-      <section className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 flex flex-col lg:flex-row grid-rows-3 items-start gap-8 ">
+      <section className="mx-6 sm:mx-8 md:mx-16 lg:mx-24 flex flex-col lg:flex-row grid-rows-3 items-start gap-8 ">
         {/* Pass relevant data to ImageGaleryDetail */}
         <ImageGaleryDetail
           menuItemId={menuItem.id}
