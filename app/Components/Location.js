@@ -24,6 +24,8 @@ export default function Location() {
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"
+          aria-label="Map showing restaurant location"
+          title="Restaurant Location on Google Maps"
         />
       </div>
     </section>

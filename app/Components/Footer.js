@@ -24,7 +24,7 @@ const Footer = () => {
                   <Link
                     href="/"
                     className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                    aria-label={`Home`}>
+                    aria-label="Home">
                     Home
                   </Link>
                 </li>
@@ -32,7 +32,7 @@ const Footer = () => {
                   <Link
                     href="/menu"
                     className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                    aria-label={`Menu`}>
+                    aria-label="Menu">
                     Menu
                   </Link>
                 </li>
@@ -40,7 +40,7 @@ const Footer = () => {
                   <Link
                     href="/#AboutUs"
                     className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                    aria-label={`About Us`}>
+                    aria-label="About Us">
                     About Us
                   </Link>
                 </li>
@@ -65,7 +65,7 @@ const Footer = () => {
                   <Link
                     href="#"
                     className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                    aria-label={`Terms of service`}>
+                    aria-label="Terms of service">
                     Terms of Service
                   </Link>
                 </li>
@@ -73,7 +73,7 @@ const Footer = () => {
                   <Link
                     href="/Reservations"
                     className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                    aria-label={`Reserve a table`}>
+                    aria-label="Reserve a table">
                     Reserve a Table
                   </Link>
                 </li>
@@ -81,7 +81,7 @@ const Footer = () => {
                   <Link
                     href="#"
                     className="block mb-2 text-sm text-subtitle-3 hover:text-yellow-400"
-                    aria-label={`Frequent answered questions`}>
+                    aria-label="Frequent answered questions">
                     FAQs
                   </Link>
                 </li>
