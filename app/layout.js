@@ -12,8 +12,8 @@ export const metadata = {
     template: "%s - My App",
     default: "My App",
   },
-  description: "Default description for SEO",
-  metadataBase: new URL("https://localhost:3000"), // Use string directly
+  description: "Restaurant website",
+  metadataBase: new URL("https://localhost:3000"),
 };
 
 export default function RootLayout({ children }) {
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body>
         <ToastProvider>
           <CartProvider>
-            <header header aria-hidden="false">
+            <header aria-hidden="false">
               <Navbar />
             </header>
             <ToastMessage />
